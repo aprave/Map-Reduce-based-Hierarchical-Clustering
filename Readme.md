@@ -42,7 +42,7 @@ Anyone who is handling file systems in an organization are the end users of the 
 
 ## 4. Solution Concept
 The below system diagram shows how files from DDFS are processed to find simliar files using fingerprint computation, jaccard index calculation and parallelized hierarchical clustering.
-<img src="/images/workflow.png" width="800" height="600">
+<img src="/images/workflow_diagram.png" width="800" height="600">
 * Fingerprint Computation: A fingerprinting algorithm is a procedure that maps an arbitrarily large data item (such as a computer file) to a much shorter bit string, its fingerprint, that uniquely identifies the original data for all practical purposes. Fingerprints are typically used to avoid the comparison and transmission of bulky data. For instance, a web browser or proxy server can efficiently check whether a remote file has been modified, by fetching only its fingerprint and comparing it with that of the previously fetched copy. In our project we will be computing fingerprints of a dataset of 100K-100TB file sizes for 100M-1B files.
 <img src="/images/Fingerprint.svg.png" width="400" height="300">
 
