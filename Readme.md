@@ -42,17 +42,26 @@ Anyone who is handling file systems in an organization are the end users of the 
 
 ## 4. Solution Concept
 
-This section provides a high-level outline of the solution.
+* Fingerprint Computation: A fingerprinting algorithm is a procedure that maps an arbitrarily large data item (such as a computer file) to a much shorter bit string, its fingerprint, that uniquely identifies the original data for all practical purposes. Fingerprints are typically used to avoid the comparison and transmission of bulky data. For instance, a web browser or proxy server can efficiently check whether a remote file has been modified, by fetching only its fingerprint and comparing it with that of the previously fetched copy. In our project we will be computing fingerprints of a dataset of 100K-100TB file sizes for 100M-1B files.
+<img src="/images/Fingerprint.svg.png" width="400" height="300">
 
-Global Architectural Structure Of the Project:
+* Deduplication-Data deduplication is a technique for eliminating duplicate copies of repeating data. A related and somewhat synonymous term is single-instance (data) storage. This technique is used to improve storage utilization and can also be applied to network data transfers to reduce the number of bytes that must be sent. In the deduplication process, unique chunks of data, or byte patterns, are identified and stored during a process of analysis. In our project we will be globalizing deduplication by locating all similar files in the same node.
 
-This section provides a high-level architecture or a conceptual diagram showing the scope of the solution. If wireframes or visuals have already been done, this section could also be used to show how the intended solution will look. This section also provides a walkthrough explanation of the architectural structure.
+* Distance Matrix Computation: Computation of the distance matrix can be expensive. Most algorithms use approximation to update the matrix. The size of the matrix is O(n^2) and we can run out of memory quickly. 
+* Hierarchical Clustering: Our objects are files. DDFS has already chunked them into 8-12K chunks, each of which is represented by a SHA1 fingerprint (20 + 4 bytes). Similarity between 2 files is measured by the Jaccard index
+J(A, B) = |A ∩ B| / |A U B|
+The distance would be 1 – J(A, B). We want to identify clusters of similar files. Most clustering algorithm takes a distance matrix and just combine the most similar files 2 at a time (or some variations)
 
- 
+* Minhash- Check locality sensitive hashing
+Minhash for a file-Apply a uniformly distributed hash function to the fingerprints in a file. Hash function maps keys to numbers, thus providing an order. Minhash is the smallest hash number for the file. Yes – we represent a file by only one number. If two files have Jaccard Index J(A, B), the probability that they have the same minhash is J(A, B). Now generate n hash functions, compute the minhash for each function. We now have a minhash signature of n numbers
+Given the minhash signature of 2 files, #same entries/#total entries = J(A, B)
+Given the minhash signature of A and B, {a1,a2,a3,… an} and {b1, b2, b3, … bn}  the minhash of the union A U B is
+{min(a1,b1), min(a2,b2), … min(an, bn)}
+If we know |A| and |B| and J(A, B), we can estimate
+           |A U B| and |A ∩ B|
 
-Design Implications and Discussion:
 
-This section discusses the implications and reasons of the design decisions made during the global architecture design.
+
 
 ## 5. Acceptance criteria
 
