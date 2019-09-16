@@ -31,9 +31,12 @@ Anyone who is handling file systems in an organization are the end users of the 
 
 ## 3.   Scope and Features Of The Project:
 
-The Scope places a boundary around the solution by detailing the range of features and functions of the project. This section helps to clarify the solution scope and can explicitly state what will not be delivered as well.
+* To use fingerprints associated with each file to analyze the jaccard similarity.
+* Compute minhash of all files in a massive dataset.
+* Use Jaccard similarity index to compute the similarity among files in the dataset.
+* Perform hierarchical clustering using the similarity index.
+* Scalability: Can scale to large number of files, projects, and services.
 
-It should be specific enough that you can determine that e.g. feature A is in-scope, while feature B is out-of-scope.
 
 ** **
 
