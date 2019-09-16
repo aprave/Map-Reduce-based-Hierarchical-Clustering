@@ -53,11 +53,29 @@ This section discusses the implications and reasons of the design decisions made
 
 ## 5. Acceptance criteria
 
-This section discusses the minimum acceptance criteria at the end of the project and stretch goals.
+The minimum acceptance criteria for this project is to research upon various approaches to find an algorithm that can find the similarity among files using jaccard indexing as the distance matrix and be able to classify files into groups of clusters. Once the algorithm is obtained, research on finding solutions to decrease the space complexity of the program and improve its performance.
 
 ## 6.  Release Planning:
 
-Release planning section describes how the project will deliver incremental sets of features and functions in a series of releases to completion. Identification of user stories associated with iterations that will ease/guide sprint planning sessions is encouraged. Higher level details for the first iteration is expected.
+Release #1 (due by Week 2): 
+File Data Set Generation  : For this project, files contain 32 or 64 bit random numbers – each represents a chunk of data.
+
+For example, file A = { 1203, 402392, 2300, 23, 102393822, …. }
+             file B = { 32393000, 103032923, 29393, 123002, 123, 2300, … }
+             
+We need to create files with similar data. There are a few “canonical” building blocks:
+* Files that are unique
+* Chain of files with p% common data between adjacent files:
+F1, F2, F3, … such that Fi and Fj share p% of common data
+* A binary hierarchy relationship like this:
+
+* Minhash Signature : Generate min hashes for the files created above.
+
+Release # 2 : (due by week 4)
+Accuracy of minhash estimates : Once the files have been generated, run some clustering algorithm to combine the files based on similarity.
+Release # 3 : 
+Improve the efficiency of the clustering algorithm by improving the space efficiency.
+.
 
 ** **
 
