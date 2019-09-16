@@ -20,9 +20,12 @@ The steps below outline the high level goals that will be a part of this project
 
 ## 2. Users/Personas Of The Project:
 
-This section describes the principal user roles of the project together with the key characteristics of these roles. This information will inform the design and the user scenarios. A complete set of roles helps in ensuring that high-level requirements can be identified in the product backlog.
+Anyone who is handling file systems in an organization are the end users of the project.
+* Cloud admin users.
+* The scaled out clustering algorithm will be used within the global dedupe engine of DDFS.
+* File System Administrators of file systems.
+* Advanced users with complex requirements who are expected to use storage systems
 
-Again, the description should be specific enough that you can determine whether user A, performing action B, is a member of the set of users the project is designed for.
 
 ** **
 
