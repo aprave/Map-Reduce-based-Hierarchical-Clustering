@@ -69,10 +69,12 @@ We need to create files with similar data. There are a few “canonical” build
 F1, F2, F3, … such that Fi and Fj share p% of common data
 * A binary hierarchy relationship like this:
 
+
 * Minhash Signature : Generate min hashes for the files created above.
 
 Release # 2 : (due by week 4)
 Accuracy of minhash estimates : Once the files have been generated, run some clustering algorithm to combine the files based on similarity.
+
 Release # 3 : 
 Improve the efficiency of the clustering algorithm by improving the space efficiency.
 .
