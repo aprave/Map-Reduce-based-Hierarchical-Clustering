@@ -1,6 +1,6 @@
 ** **
 
-## Project Description Template
+## Using map-reduce based hierarchical clustering to find similar files in a large dataset
 
 ## 1.   Vision and Goals Of The Project:
 
@@ -17,8 +17,6 @@ The steps below outline the high level goals that will be a part of this project
 * Optimize the clustering by computing hierarchical clusters for subset of files and then assign the remaining files in the top down manner.
 * Further optimization by considering a subset of fingerprints or some minhash of the fingerprints rather than all the fingerprints.
 * To find out how good is sampling approach as compared to non-sampling approach.
-
-
 
 ## 2. Users/Personas Of The Project:
 
