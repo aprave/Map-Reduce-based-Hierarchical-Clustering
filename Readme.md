@@ -4,10 +4,10 @@
 
 ## 1.   Vision and Goals Of The Project:
 
-The vision of the project is to find clusters of similar files among massive datasets. It is really difficult to find similarity between two files that are huge in size. The problem becomes more complicated when the number of files that are needed to be analyzed is also huge in numbers and it is required to find the clusters of similar files. 
+The vision of the project is to find clusters of similar files among massive datasets. It is really difficult to find similarity between two files that are huge in size. The problem becomes more complicated when the number of files that are needed to be analyzed is huge and we are required to find the clusters of similar files. 
 Hierarchical clustering is one of the prominent and widely-used data mining techniques for its informative representation of clustering results.
 In the face of the ever-growing datasets, the single-machine performance of hierarchical clustering algorithm can no longer keep up the game, which creates an urgent demand for a parallel solution. However, the parallelization of hierarchical clustering algorithm is a non-trivial task. 
-This project will research upon approaches to parallelize hierarchical clustering by using map reduce technique which is an efficient way to implement parallelization. Most clustering algorithm takes a distance matrix and just combine the most similar files two at a time (or some variation), But this computation can be expensive. 
+This project will research upon approaches to parallelize hierarchical clustering by using map reduce technique which is an efficient way to implement parallelization. Most clustering algorithm takes a distance matrix and just combine the most similar files two at a time (or some variation), but this computation can be expensive. 
 
 The steps below outline the high level goals that will be a part of this project : 
 * Create a scaled-out architecture – a cluster with many nodes.
@@ -22,7 +22,7 @@ The steps below outline the high level goals that will be a part of this project
 
 Anyone who is handling file systems in an organization are the end users of the project.
 * Cloud admin users.
-* The scaled out clustering algorithm will be used within the global dedupe engine of DDFS.
+* The system will be used by the users of global dedupe engine of DDFS.
 * File System Administrators of file systems.
 * Advanced users with complex requirements who are expected to use storage systems
 
@@ -34,7 +34,7 @@ Anyone who is handling file systems in an organization are the end users of the 
 * To use fingerprints associated with each file to analyze the jaccard similarity.
 * Compute minhash of all files in a massive dataset.
 * Use Jaccard similarity index to compute the similarity among files in the dataset.
-* Perform hierarchical clustering using the similarity index.
+* Perform hierarchical clustering using the similarity index and map-reduce technique.
 * Scalability: Can scale to large number of files, projects, and services.
 
 
@@ -91,7 +91,3 @@ Improve the efficiency of the clustering algorithm by improving the space effici
 .
 
 ** **
-
-## General comments
-
-Remember that you can always add features at the end of the semester, but you can't go back in time and gain back time you spent on features that you couldn't complete.
