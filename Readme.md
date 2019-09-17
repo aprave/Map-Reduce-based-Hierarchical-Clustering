@@ -102,6 +102,7 @@ Accuracy of minhash estimates : Once the files have been generated, run some clu
 
 Release # 3 : 
 Improve the efficiency of the clustering algorithm by improving the space efficiency.
-.
 
+References :
+https://pdfs.semanticscholar.org/7b12/f6ef8d620bcc54e71da13df4291bcc8d0679.pdf
 ** **
