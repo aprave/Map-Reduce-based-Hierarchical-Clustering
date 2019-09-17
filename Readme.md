@@ -31,12 +31,23 @@ Anyone who is handling file systems in an organization are the end users of the 
 
 ## 3.   Scope and Features Of The Project:
 
+This is basically a research project to figure out the optimal algorithm for finding similar files. The most important problem is to optimize space complexity. Cloud is expensive, therefore memory optimization is an important problem to solve.
+
+Scope:
+It will decrease the space required to save similar files on cloud.
+Can be applied to any file system or a system with data storage requirement.
+When files are merged, jaccard distances between files change, error correction on that is required to be done.
+Scalability: Can scale to large number of files, projects, and services.
+Data Deduplication will clean up the duplicate data in the storage systems.
+For that we are following the below steps-
 * To use fingerprints associated with each file to analyze the jaccard similarity.
 * Compute minhash of all files in a massive dataset.
 * Use Jaccard similarity index to compute the similarity among files in the dataset.
 * Perform hierarchical clustering using the similarity index and map-reduce technique.
-* Scalability: Can scale to large number of files, projects, and services.
 
+Features:
+- Less space requirment.
+- Better similarity detection between files.
 
 ** **
 
