@@ -19,16 +19,7 @@ The steps below outline the high level goals that will be a part of this project
 * To find out how good is sampling approach as compared to non-sampling approach.
 
 ## 2. Users/Personas Of The Project:
-
-Anyone who is handling file systems in an organization are the end users of the project.
-* Cloud admin users.
-* The system will be used by the users of global dedupe engine of DDFS.
-* File System Administrators of file systems.
-* Advanced users with complex requirements who are expected to use storage systems
-
-
-** **
-References: https://pdfs.semanticscholar.org/7b12/f6ef8d620bcc54e71da13df4291bcc8d0679.pdf
+TBD
 
 ## 3.   Scope and Features Of The Project:
 
