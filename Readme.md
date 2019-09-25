@@ -27,7 +27,6 @@ The main features we are aiming to implement were elucidated by our mentor:
 ** **
 
 ## 4. Solution Concept
-The below system diagram shows how files from DDFS are processed to find simliar files using fingerprint computation, jaccard index calculation and parallelized hierarchical clustering.
 <img src="/images/mapreduce.PNG" width="750" height="1000">
 
 _Fig 1- The workflow diagram of the project. The first step is to generate dataset files with fingerprints. The second step is to get initial dissimilarity matrix. This matrix is input to first iteration of map reduce and the output of first map reduce iteration is input to the second iteration and so on until the optimal solution is reached._
@@ -70,7 +69,7 @@ If we know |A| and |B| and J(A, B), we can estimate
 ## 6.  Release Planning:
 
 Release #1 (due by Week 2): 
-File Data Set Generation  : For this project, files contain 32 or 64 bit random numbers – each represents a chunk of data.
+File Data Set Generation  : For this project, files contain 32 or 64 bit integers – each represents a chunk of data.
 
 For example, file A = { 1203, 402392, 2300, 23, 102393822, …. }
              file B = { 32393000, 103032923, 29393, 123002, 123, 2300, … }
@@ -83,11 +82,25 @@ F1, F2, F3, … such that Fi and Fj share p% of common data
 <img src="/images/Tree.PNG" width="300" height="300">
 * Minhash Signature : Generate min hashes for the files created above.
 
-Release # 2 : (due by week 4)
-Accuracy of minhash estimates : Once the files have been generated, run some clustering algorithm to combine the files based on similarity.
+Release # 2 (due by week 4)
+* Minhash estimation of the Jaccard distance
 
-Release # 3 : 
-Improve the efficiency of the clustering algorithm by improving the space efficiency.
+Release # 3 : (due by week 6)
+A basic clustering algorithm that supports minhashing.
+
+
+Release # 4 : (due by week 8)
+* Implement iterate map reduce clustering algorithm
+
+Release # 5 : (due by week 10)
+* Report the efficiency improvement experiments of the clustering algorithm by improving the space efficiency.
+
+Release # 6 : (due by week 12)
+
+_Stretch Goals:_
+Iterative clustering algorithm that supports following linkage algorithms:
+* Max/Complete linkage
+* Average linkage
 
 References :
 https://pdfs.semanticscholar.org/7b12/f6ef8d620bcc54e71da13df4291bcc8d0679.pdf
