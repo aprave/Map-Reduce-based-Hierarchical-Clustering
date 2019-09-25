@@ -28,6 +28,7 @@ The main features we are aiming to implement were elucidated by our mentor:
 
 ## 4. Solution Concept
 Overview
+
 <img src="/images/mapreduce.PNG" width="750" height="1000">
 
 _Fig 1- The workflow diagram of the project. The first step is to generate dataset files with fingerprints. The second step is to get initial dissimilarity matrix. This matrix is input to first iteration of map reduce and the output of first map reduce iteration is input to the second iteration and so on until the optimal solution is reached._
