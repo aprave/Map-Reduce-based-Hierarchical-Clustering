@@ -4,19 +4,12 @@
 
 ## 1.   Vision and Goals Of The Project:
 
-The vision of the project is to find clusters of similar files among massive datasets. It is really difficult to find similarity between two files that are huge in size. The problem becomes more complicated when the number of files that are needed to be analyzed is huge and we are required to find the clusters of similar files. 
-Hierarchical clustering is one of the prominent and widely-used data mining techniques for its informative representation of clustering results.
-In the face of the ever-growing datasets, the single-machine performance of hierarchical clustering algorithm can no longer keep up the game, which creates an urgent demand for a parallel solution. However, the parallelization of hierarchical clustering algorithm is a non-trivial task. 
-This project will research upon approaches to parallelize hierarchical clustering by using map reduce technique which is an efficient way to implement parallelization. Most clustering algorithm takes a distance matrix and just combine the most similar files two at a time (or some variation), but this computation can be expensive. 
+The current demands for datacenters is huge and storing backups can become a tedious task. Moving massive data in the production environment is both computationally and spatially expensive, to tackle this Dell's DDFS (Data Domain File System) provides deduplication that splits files into chunks. Hierarchical clustering would allow us to iteratively predict similarity in files with more confidence. Scaling our solution using map-reduce also enables us to perform deduplication on a multi-node distributed system.
 
-The steps below outline the high level goals that will be a part of this project : 
-* Create a scaled-out architecture – a cluster with many nodes.
-* Currently deduplication occurs within a single node but we are required to implement deduplication  globally by locating all similar files in the same node.
-* Create a  clustering algorithm that can be scaled to many nodes.
-* Find similar files using clustering algorithms in massive large datasets.
-* Optimize the clustering by computing hierarchical clusters for subset of files and then assign the remaining files in the top down manner.
-* Further optimization by considering a subset of fingerprints or some minhash of the fingerprints rather than all the fingerprints.
-* To find out how good is sampling approach as compared to non-sampling approach.
+Our short term goal in this project is to develop a clustering algorithm that can potentially find similar files on a single node. Our efforts would be focused on finding techniques that can predict similarity in files, starting at minhash estimation of the Jaccard distance and further support linkage algorithms such as max/complete linkage, average linkage. We plan to extend this solution to a multi-node distributed system using map-reduce, allowing us to process larger datasets. 
+
+The goal of the project:
+* Develop a clustering algorithm that is scalable w.r.t. memory requirement.
 
 ## 2. Users/Personas Of The Project:
 Researchers working on DDFS (Data Domain File System by Dell)
