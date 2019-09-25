@@ -52,7 +52,14 @@ If we know |A| and |B| and J(A, B), we can estimate
 
 ## 5. Acceptance criteria
 
-The minimum acceptance criteria for this project is to research upon various approaches to find an algorithm that can find the similarity among files using jaccard indexing as the distance matrix and be able to classify files into groups of clusters. Once the algorithm is obtained, research on finding solutions to decrease the space complexity of the program and improve its performance.
+The minimum acceptance criteria for the project is as follows :
+* Develop a  clustering algorithm that finds similar files on a single node using min hashing estimation of Jaccard indices.
+* Report possible solutions for a scaled-out architecture of the clustering algorithm that performs clustering on multiple nodes using map-reduce.
+Stretch goals:
+* Compare the following approaches for finding the distance between files 
+           * Max/complete linkage 
+           * Average linkage.
+           * Min-hash estimation of the Jaccard Index
 
 ## 6.  Release Planning:
 
