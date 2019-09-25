@@ -38,10 +38,7 @@ _Fig 1- The workflow diagram of the project. The first step is to generate datas
 
 * Deduplication-Data deduplication is a technique for eliminating duplicate copies of repeating data. A related and somewhat synonymous term is single-instance (data) storage. This technique is used to improve storage utilization and can also be applied to network data transfers to reduce the number of bytes that must be sent. In the deduplication process, unique chunks of data, or byte patterns, are identified and stored during a process of analysis. In our project we will be globalizing deduplication by locating all similar files in the same node.
 
-* Distance Matrix Computation: Computation of the distance matrix can be expensive. Most algorithms use approximation to update the matrix. The size of the matrix is O(n^2) and we can run out of memory quickly. 
-* Hierarchical Clustering: Our objects are files. DDFS has already chunked them into 8-12K chunks, each of which is represented by a SHA1 fingerprint (20 + 4 bytes). Similarity between 2 files is measured by the Jaccard index
-J(A, B) = |A ∩ B| / |A U B|
-The distance would be 1 – J(A, B). We want to identify clusters of similar files. Most clustering algorithm takes a distance matrix and just combine the most similar files 2 at a time (or some variations)
+* Distance Matrix Computation: * Distance Matrix Computation: Similarity between 2 files is measured by the Jaccard index J(A, B) = |A ∩ B| / |A U B|. The distance would be 1 – J(A, B). We want to identify clusters of similar files. Most clustering algorithm takes a distance matrix and just combine the most similar files 2 at a time (or some variations). Computation of the distance matrix can be expensive. Most algorithms use approximation to update the matrix. The size of the matrix is O(n^2) and we can run out of memory quickly.
 
 * Minhash- Check locality sensitive hashing.
 Minhash for a file-Apply a uniformly distributed hash function to the fingerprints in a file. Hash function maps keys to numbers, thus providing an order. Minhash is the smallest hash number for the file. Yes – we represent a file by only one number. If two files have Jaccard Index J(A, B), the probability that they have the same minhash is J(A, B). Now generate n hash functions, compute the minhash for each function. We now have a minhash signature of n numbers
