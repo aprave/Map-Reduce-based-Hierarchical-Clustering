@@ -80,19 +80,23 @@ We need to create files with similar data. There are a few “canonical” build
 F1, F2, F3, … such that Fi and Fj share p% of common data
 * A binary hierarchy relationship like this:
 <img src="/images/Tree.PNG" width="300" height="300">
-* Minhash Signature : Generate min hashes for the files created above.
+
+Minhash Signature : Generate min hashes for the files created above.
 
 Release # 2 (due by week 4)
+
 * Minhash estimation of the Jaccard distance
 
 Release # 3 : (due by week 6)
-A basic clustering algorithm that supports minhashing.
 
+* A basic clustering algorithm that supports minhashing.
 
 Release # 4 : (due by week 8)
+
 * Implement iterate map reduce clustering algorithm
 
 Release # 5 : (due by week 10)
+
 * Report the efficiency improvement experiments of the clustering algorithm by improving the space efficiency.
 
 Release # 6 : (due by week 12)
