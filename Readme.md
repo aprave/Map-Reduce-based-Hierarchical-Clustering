@@ -22,7 +22,7 @@ The main features we are aiming to implement were elucidated by our mentor:
 * Report findings on which algorithm is more suitable on the basis of data set size i.e. min-hash estimation of the Jaccard distance, max/complete linkage, average linkage.
 * Extend this solution to develop programs that can run on multiple nodes to solve the clustering algorithm (using map reduce) and   produce an end result that looks like:
 
-           	Cluster# 	|  Dissimilarity Level |		File ID’s
+           	Cluster#  	  |  Dissimilarity Level |	File ID’s
 
 ** **
 
