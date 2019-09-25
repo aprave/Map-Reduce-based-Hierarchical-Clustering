@@ -52,10 +52,12 @@ If we know |A| and |B| and J(A, B), we can estimate
 
 ## 5. Acceptance criteria
 
-The minimum acceptance criteria for the project is as follows :
+*The minimum acceptance criteria for the project is as follows :*
+
 * Develop a  clustering algorithm that finds similar files on a single node using min hashing estimation of Jaccard indices.
 * Report possible solutions for a scaled-out architecture of the clustering algorithm that performs clustering on multiple nodes using map-reduce.
-Stretch goals:
+
+*Stretch goals:*
 * Compare the following approaches for finding the distance between files:
 
            * Max/complete linkage 
