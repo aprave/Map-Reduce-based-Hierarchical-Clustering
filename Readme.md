@@ -28,7 +28,10 @@ The main features we are aiming to implement were elucidated by our mentor:
 
 ## 4. Solution Concept
 The below system diagram shows how files from DDFS are processed to find simliar files using fingerprint computation, jaccard index calculation and parallelized hierarchical clustering.
-<img src="/images/mapreduce.PNG" width="800" height="600">
+<img src="/images/mapreduce.PNG" width="750" height="1000">
+
+_Fig 1- The workflow diagram of the project. The first step is to generate dataset files with fingerprints. The second step is to get initial dissimilarity matrix. This matrix is input to first iteration of map reduce and the output of first map reduce iteration is input to the second iteration and so on until the optimal solution is reached._
+
 * Fingerprint Computation: A fingerprinting algorithm is a procedure that maps an arbitrarily large data item (such as a computer file) to a much shorter bit string, its fingerprint, that uniquely identifies the original data for all practical purposes. Fingerprints are typically used to avoid the comparison and transmission of bulky data. For instance, a web browser or proxy server can efficiently check whether a remote file has been modified, by fetching only its fingerprint and comparing it with that of the previously fetched copy. In our project we will be computing fingerprints of a dataset of 100K-100TB file sizes for 100M-1B files.
 <img src="/images/Fingerprint.svg.png" width="400" height="300">
 
