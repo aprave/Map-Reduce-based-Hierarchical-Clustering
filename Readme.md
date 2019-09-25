@@ -80,7 +80,7 @@ We need to create files with similar data. There are a few “canonical” build
 * Chain of files with p% common data between adjacent files:
 F1, F2, F3, … such that Fi and Fj share p% of common data
 * A binary hierarchy relationship like this:
-<img src="/images/Hierarchy.PNG" width="300" height="300">
+<img src="/images/Hierarchy.PNG" width="400" height="400">
 
 Minhash Signature : Generate min hashes for the files created above.
 
