@@ -60,9 +60,9 @@ If we know |A| and |B| and J(A, B), we can estimate
 *Stretch goals:*
 * Compare the following approaches for finding the distance between files:
 
-            Max/complete linkage 
-            Average linkage.
-            Min-hash estimation of the Jaccard Index
+           - Max/complete linkage 
+           - Average linkage.
+           - Min-hash estimation of the Jaccard Index
 
 ## 6.  Release Planning:
 
