@@ -16,24 +16,13 @@ Researchers working on DDFS (Data Domain File System by Dell)
 
 ## 3.   Scope and Features Of The Project:
 
-This is basically a research project to figure out the optimal algorithm for finding similar files. The most important problem is to optimize space complexity. Cloud is expensive, therefore memory optimization is an important problem to solve.
+The main features we are aiming to implement were elucidated by our mentor:
 
-Scope:
-* It will decrease the space required to save similar files on cloud.
-* Can be applied to any file system or a system with data storage requirement.
-* When files are merged, jaccard distances between files change, error correction on that is required to be done. 
-* Scalability: Can scale to large number of files, projects, and services.
-* Data Deduplication will clean up the duplicate data in the storage systems.
+* Create python programs that can implement a basic clustering algorithm for the datasets on a single node
+* Report findings on which algorithm is more suitable on the basis of data set size i.e. min-hash estimation of the Jaccard distance, max/complete linkage, average linkage.
+* Extend this solution to develop programs that can run on multiple nodes to solve the clustering algorithm (using map reduce) and   produce an end result that looks like:
 
-For achieving the above objectives we are following the below steps-
-* To use fingerprints associated with each file to analyze the jaccard similarity.
-* Compute minhash of all files in a massive dataset.
-* Use Jaccard similarity index to compute the similarity among files in the dataset.
-* Perform hierarchical clustering using the similarity index and map-reduce technique.
-
-Features:
-- Less space requirment.
-- Better similarity detection between files.
+           	Cluster# 	|  Dissimilarity Level |		File ID’s
 
 ** **
 
