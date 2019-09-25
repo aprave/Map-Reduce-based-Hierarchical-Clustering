@@ -27,7 +27,7 @@ The main features we are aiming to implement were elucidated by our mentor:
 ** **
 
 ## 4. Solution Concept
-Overview
+_Overview_
 
 <img src="/images/mapreduce.PNG" width="750" height="1000">
 
