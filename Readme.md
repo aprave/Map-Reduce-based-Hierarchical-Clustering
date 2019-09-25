@@ -19,7 +19,7 @@ The steps below outline the high level goals that will be a part of this project
 * To find out how good is sampling approach as compared to non-sampling approach.
 
 ## 2. Users/Personas Of The Project:
-TBD
+Researchers working on DDFS (Data Domain File System by Dell)
 
 ## 3.   Scope and Features Of The Project:
 
