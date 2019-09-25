@@ -106,7 +106,6 @@ Iterative clustering algorithm that supports following linkage algorithms:
 * Max/Complete linkage
 * Average linkage
 
-Nirupama
 References :
 https://pdfs.semanticscholar.org/7b12/f6ef8d620bcc54e71da13df4291bcc8d0679.pdf
 ** **
