@@ -29,9 +29,9 @@ if __name__ == "__main__":
     str_common=Generator().generate_common_content()
 
     for num in range(NUMBER_OF_FILES):
-        f1 = open(os.getcwd() + "\\data\\file"+ str(num)+".txt", "w", encoding='utf-8')
+        f1 = open(os.getcwd() + "\\data\\file" + str(num)+".txt", "w", encoding='utf-8')
         str_random_prefix = Generator().generate_random_content()
         str_random_suffix = Generator().generate_common_content()
-        print(str_random_prefix+ str_common+ str_random_suffix)
-        f1.write(str_random_prefix+ str_common+ str_random_suffix)
+        print(str_random_prefix + str_common + str_random_suffix)
+        f1.write(str_random_prefix + str_common + str_random_suffix)
         f1.close()
