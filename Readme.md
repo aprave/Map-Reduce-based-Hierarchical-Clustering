@@ -12,7 +12,6 @@ The goal of the project:
 * Report performance related findings on various file similarity prediction algorithms.
 * Develop a clustering algorithm that is scalable w.r.t. memory requirement.
 
-
 ## 2. Users/Personas Of The Project:
 Researchers working on DDFS (Data Domain File System by Dell)
 
@@ -24,7 +23,7 @@ The main features we are aiming to implement were elucidated by our mentor:
 * Report findings on which file similarity prediction algorithm is more suitable on the basis of data set size i.e. min-hash estimation of the Jaccard distance, max/complete linkage, average linkage.
 * Extend this solution to develop programs that can run on multiple nodes to solve the clustering algorithm (using map reduce) and   produce an end result that looks like:
 
-           	Cluster#  	  |  Dissimilarity Level |	File ID’s
+           	ClusterID  |  Dissimilarity Level  |   File IDs
 
 ** **
 
@@ -35,12 +34,12 @@ _Overview_
 
 _Fig 1- The workflow diagram of the project. The first step is to generate dataset files with fingerprints. The second step is to get initial dissimilarity matrix. This matrix is input to first iteration of map reduce and the output of first map reduce iteration is input to the second iteration and so on until the optimal solution is reached._
 
-* Fingerprint Computation: A fingerprinting algorithm is a procedure that maps an arbitrarily large data item (such as a computer file) to a much shorter bit string, its fingerprint, that uniquely identifies the original data for all practical purposes. Fingerprints are typically used to avoid the comparison and transmission of bulky data. For instance, a web browser or proxy server can efficiently check whether a remote file has been modified, by fetching only its fingerprint and comparing it with that of the previously fetched copy. In our project we will be computing fingerprints of a dataset of 100K-100TB file sizes for 100M-1B files.
+* Fingerprint Computation: A fingerprinting algorithm is a procedure that maps an arbitrarily large data item (such as a computer file) to a much shorter bit string, its fingerprint, that uniquely identifies the original data for all practical purposes. Fingerprints are typically used to avoid the comparison and transmission of bulky data. For instance, a web browser or proxy server can efficiently check whether a remote file has been modified, by fetching only its fingerprint and comparing it with that of the previously fetched copy. In our project we will be computing fingerprints of a dataset of 100K-100TB file sizes for 100M-1B files. We are generating our dataset files by using random 32-64 bit integers as fingerprints and by keeping a certain percentage of similar fingerprints in some of the dataset files.
 <img src="/images/Fingerprint.svg.png" width="400" height="300">
 
 * Deduplication-Data deduplication is a technique for eliminating duplicate copies of repeating data. A related and somewhat synonymous term is single-instance (data) storage. This technique is used to improve storage utilization and can also be applied to network data transfers to reduce the number of bytes that must be sent. In the deduplication process, unique chunks of data, or byte patterns, are identified and stored during a process of analysis. In our project we will be globalizing deduplication by locating all similar files in the same node.
 
-* Distance Matrix Computation: Similarity between 2 files is measured by the Jaccard index J(A, B) = |A ∩ B| / |A U B|. The distance would be 1 – J(A, B). We want to identify clusters of similar files. Most clustering algorithm takes a distance matrix and just combine the most similar files 2 at a time (or some variations). Computation of the distance matrix can be expensive. Most algorithms use approximation to update the matrix. The size of the matrix is O(n^2) and we can run out of memory quickly.
+* Distance Matrix Computation: Similarity between two files is measured by the Jaccard index J(A, B) = |A ∩ B| / |A U B|. The distance would be 1 – J(A, B). We want to identify clusters of similar files. Most clustering algorithm takes a distance matrix and just combine the most similar files two at a time (or some variations). Computation of the distance matrix can be expensive. Most algorithms use approximation to update the matrix. The size of the matrix is O(n^2) and we can run out of memory quickly.
 
 * Minhash- Check locality sensitive hashing.
 Minhash for a file-Apply a uniformly distributed hash function to the fingerprints in a file. Hash function maps keys to numbers, thus providing an order. Minhash is the smallest hash number for the file. Yes – we represent a file by only one number. If two files have Jaccard Index J(A, B), the probability that they have the same minhash is J(A, B). Now generate n hash functions, compute the minhash for each function. We now have a minhash signature of n numbers
@@ -49,6 +48,21 @@ Given the minhash signature of A and B, {a1,a2,a3,… an} and {b1, b2, b3, … b
 {min(a1,b1), min(a2,b2), … min(an, bn)}
 If we know |A| and |B| and J(A, B), we can estimate
            |A U B| and |A ∩ B|
+ * Hierarchical clustering - it is one of the popular and easy to understand clustering technique.
+For this project, initially each data point is considered as an individual cluster. At each iteration, the similar clusters will merge with other clusters until one cluster or K clusters are formed.The basic algorithm is :  
+ Compute the proximity matrix  
+ Let each data point be a cluster  
+ Repeat: Merge the two closest clusters and update the proximity matrix until there is no change in the matrix.  
+ Since heirarchical clustering needs to create a distance matrix in order to compute similarities it proves to be highly space inefficient especially when number of files are large. However, if the algorithm is scaled and distributed across multiple nodes, it can highly improve performance. In order to accomplish this, the project will use map reduce to process the distance matrix over multiple nodes.
+ * Finding Similarities among files - Apart from calculating Jaccard index, the following measures can be used to find distance between two hash functions :  
+ **single linkage algorithm** : can be defined as the similarity of two clusters C1 and C2 is equal to the minimum of the similarity between points Pi and Pj such that Pi belongs to C1 and Pj belongs to C2.  
+Sim(C1,C2) = Min Sim(Pi,Pj) such that Pi ∈ C1 & Pj ∈ C2  
+**complete linkage algorithm** : this is exactly opposite to the MIN approach. The similarity of two clusters C1 and C2 is equal to the maximum of the similarity between points Pi and Pj such that Pi belongs to C1 and Pj belongs to C2.  
+Sim(C1,C2) = Max Sim(Pi,Pj) such that Pi ∈ C1 & Pj ∈ C2  
+**Group Average** : Take all the pairs of points and compute their similarities and calculate the average of the similarities.  
+Mathematically this can be written as,  
+sim(C1,C2) = ∑ sim(Pi, Pj)/|C1|*|C2|  
+
 
 
 
@@ -80,7 +94,7 @@ We need to create files with similar data. There are a few “canonical” build
 * Chain of files with p% common data between adjacent files:
 F1, F2, F3, … such that Fi and Fj share p% of common data
 * A binary hierarchy relationship like this:
-<img src="/images/Hierarchy.PNG" width="400" height="400">
+<img src="/images/Hierarchy.PNG" width="300" height="300">
 
 Minhash Signature : Generate min hashes for the files created above.
 
@@ -106,6 +120,9 @@ _Stretch Goals:_
 Iterative clustering algorithm that supports following linkage algorithms:
 * Max/Complete linkage
 * Average linkage
+
+## Open Questions?
+* Apart from researchers at Dell Data Domain File System team, who else will be the users and personas for this project?
 
 References :
 https://pdfs.semanticscholar.org/7b12/f6ef8d620bcc54e71da13df4291bcc8d0679.pdf
