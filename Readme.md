@@ -124,6 +124,8 @@ Iterative clustering algorithm that supports following linkage algorithms:
 ## Open Questions?
 * Apart from researchers at Dell Data Domain File System team, who else will be the users and personas for this project?
 
+* How do we design the dissimilarity matrix and are there any ways to alter the representation so as to reduce the spatial complexity?
+
 References :
 https://pdfs.semanticscholar.org/7b12/f6ef8d620bcc54e71da13df4291bcc8d0679.pdf
 ** **
