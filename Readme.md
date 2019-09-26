@@ -4,12 +4,14 @@
 
 ## 1.   Vision and Goals Of The Project:
 
-The current demands for datacenters are huge and storing backups can become a tedious task. Moving massive data in the production environment is both computationally and spatially expensive, to tackle this Dell's DDFS (Data Domain File System) provides deduplication that splits files into chunks. Hierarchical clustering would allow us to iteratively predict similarity in files with more confidence. Scaling our solution using map-reduce also enables us to perform deduplication on a multi-node distributed system.
+The current demands for datacenters are huge and storing backups can become a tedious task. Moving massive data in the production environment is both computationally and spatially expensive. To resolve this, Dell's DDFS (Data Domain File System) provides deduplication that splits files into chunks. Hierarchical clustering would allow us to iteratively predict similarity in files with more confidence. Scaling our solution using map-reduce also enables us to perform deduplication on a multi-node distributed system.
 
 Our short term goal in this project is to develop a clustering algorithm that can potentially find similar files on a single node. Our efforts would be focused on finding techniques that can predict similarity in files, starting at minhash estimation of the Jaccard distance and further support linkage algorithms such as max/complete linkage, average linkage. We plan to extend this solution to a multi-node distributed system using map-reduce, allowing us to process larger datasets. 
 
 The goal of the project:
+* Report performance related findings on various file similarity prediction algorithms.
 * Develop a clustering algorithm that is scalable w.r.t. memory requirement.
+
 
 ## 2. Users/Personas Of The Project:
 Researchers working on DDFS (Data Domain File System by Dell)
@@ -19,7 +21,7 @@ Researchers working on DDFS (Data Domain File System by Dell)
 The main features we are aiming to implement were elucidated by our mentor:
 
 * Create python programs that can implement a basic clustering algorithm for the datasets on a single node
-* Report findings on which algorithm is more suitable on the basis of data set size i.e. min-hash estimation of the Jaccard distance, max/complete linkage, average linkage.
+* Report findings on which file similarity prediction algorithm is more suitable on the basis of data set size i.e. min-hash estimation of the Jaccard distance, max/complete linkage, average linkage.
 * Extend this solution to develop programs that can run on multiple nodes to solve the clustering algorithm (using map reduce) and   produce an end result that looks like:
 
            	Cluster#  	  |  Dissimilarity Level |	File ID’s
