@@ -12,9 +12,9 @@ class Generator:
     def generate_random_content(self):
         size=random.randint(0,self.RANDOM_CONTENT_SIZE)
         print(size)
-        str_random=""
+        str_random = ""
         for num in range(size):
-            str_random+=" "+str(random.randint(0,sys.maxsize))+","
+            str_random += " "+str(random.randint(0, sys.maxsize))+","
         return str_random
 
     def generate_common_content(self):
@@ -26,7 +26,7 @@ class Generator:
 
 if __name__ == "__main__":
     NUMBER_OF_FILES = 20
-    str_common=Generator().generate_common_content()
+    str_common = Generator().generate_common_content()
 
     for num in range(NUMBER_OF_FILES):
         f1 = open(os.getcwd() + "\\data\\file" + str(num)+".txt", "w", encoding='utf-8')
