@@ -86,6 +86,7 @@ sim(C1,C2) = ∑ sim(Pi, Pj)/|C1|*|C2|
 ## 6.  Release Planning:
 
 Release #1 (due by Week 2): 
+
 File Data Set Generation  : For this project, files contain 32 or 64 bit integers – each represents a chunk of data.
 
 For example, file A = { 1203, 402392, 2300, 23, 102393822, …. }
@@ -127,6 +128,10 @@ Iterative clustering algorithm that supports following linkage algorithms:
 * Apart from researchers at Dell Data Domain File System team, who else will be the users and personas for this project?
 
 * How do we design the dissimilarity matrix and are there any ways to alter the representation so as to reduce the spatial complexity?
+
+## Presentations:
+Demo 1:
+https://docs.google.com/presentation/d/1QKXyxbTsCa_3MybXeT2vbhxHfIkL4UOI8EqA_8rBoV8/edit?usp=sharing
 
 References :
 https://pdfs.semanticscholar.org/7b12/f6ef8d620bcc54e71da13df4291bcc8d0679.pdf
