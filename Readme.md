@@ -133,7 +133,7 @@ Iterative clustering algorithm that supports following linkage algorithms:
 Demo 1:
 https://docs.google.com/presentation/d/1QKXyxbTsCa_3MybXeT2vbhxHfIkL4UOI8EqA_8rBoV8/edit?usp=sharing
 System Demo Video:
-https://youtu.be/_elw7a7Hd9Y
+https://youtu.be/xMPnpYLJiG0
 ## References :
 https://pdfs.semanticscholar.org/7b12/f6ef8d620bcc54e71da13df4291bcc8d0679.pdf
 ** **
