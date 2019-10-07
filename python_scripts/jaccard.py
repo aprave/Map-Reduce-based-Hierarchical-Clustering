@@ -2,6 +2,10 @@ import random
 import sys
 import os
 import math
+import torch.nn as nn
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.cluster import AgglomerativeClustering
 
 class Jaccard:
     def __init__(self):
@@ -9,20 +13,22 @@ class Jaccard:
         self.COMMON_CONTENT_SIZE = 2000
         self.ROOT_FILE_NAME = ""
         self.COMMON_CONTENT = ""
-        self.NUMBER_OF_FILES = 20
+        self.NUMBER_OF_FILES = 80
         self.file_fingerprint_dict={}
 
     def generate_file_fingerprint_map(self):
 
-        for num in range(self.NUMBER_OF_FILES):
-            self.file_fingerprint_dict.setdefault("file"+str(num)+".txt",'')
-            f1 = open(os.getcwd() + "\\data\\file"+ str(num)+".txt", "r", encoding='utf-8')
+        for num in range(11,31):
+           for k in range(1,5,1):
+            print("file"+str(num)+ str(k)+".txt")
+            self.file_fingerprint_dict.setdefault("file"+str(num)+ str(k)+".txt",'')
+            f1 = open(os.getcwd() + "\\data\\file"+str(num)+ str(k)+".txt", "r", encoding='utf-8')
             fingerprints=[]
             contents=f1.read()
             x = contents[0: len(contents)-1].split(", ")
             for count in x:
                 fingerprints.append(count)
-            self.file_fingerprint_dict["file"+str(num)+".txt"] = fingerprints
+            self.file_fingerprint_dict["file"+str(num)+ str(k)+".txt"] = fingerprints
         return self.file_fingerprint_dict
 
     def jaccard_similarity(self,list1,list2):
@@ -34,11 +40,13 @@ class Jaccard:
 
     def get_jaccard(self, dict):
         two_d=[]
-        for i in range(self.NUMBER_OF_FILES):
-                fp1 = dict["file"+str(i)+".txt"]
+        for i in range(11,31):
+            for l in range(1,5,1):
+                fp1 = dict["file"+str(i)+str(l)+".txt"]
                 new=[]
-                for j in range(self.NUMBER_OF_FILES):
-                    fp2 = dict["file"+str(j)+".txt"]
+                for j in range(11, 31):
+                  for m in range(1,5,1):
+                    fp2 = dict["file"+str(j)+str(m)+".txt"]
                     new.append(self.jaccard_similarity(fp1,fp2))
                 two_d.append(new)
         return two_d
@@ -49,3 +57,9 @@ if __name__ == "__main__":
    dict=Jaccard().generate_file_fingerprint_map()
    signatures=Jaccard().get_jaccard(dict)
    print(signatures)
+   X=np.array(signatures)
+   cluster = AgglomerativeClustering(n_clusters=4, affinity='euclidean', linkage='ward')
+   cluster.fit_predict(X)
+   print(cluster.labels_)
+   plt.scatter(X[:, 0], X[:, 1], c=cluster.labels_, cmap='rainbow')
+   plt.show()
