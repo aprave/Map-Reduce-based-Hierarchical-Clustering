@@ -34,7 +34,8 @@ class Jaccard:
     def jaccard_similarity(self,list1,list2):
         intersection = len(list(set(list1).intersection(list2)))
         union = (len(list1) + len(list2)) - intersection
-        return float(intersection / union)
+        # Produce the dissimilarity matrix
+        return  1 - float(intersection / union)
 
     #get the jaccard similarity for all files
 
@@ -56,10 +57,13 @@ class Jaccard:
 if __name__ == "__main__":
    dict=Jaccard().generate_file_fingerprint_map()
    signatures=Jaccard().get_jaccard(dict)
-   print(signatures)
    X=np.array(signatures)
    cluster = AgglomerativeClustering(n_clusters=4, affinity='euclidean', linkage='ward')
    cluster.fit_predict(X)
    print(cluster.labels_)
    plt.scatter(X[:, 0], X[:, 1], c=cluster.labels_, cmap='rainbow')
    plt.show()
+   for i in range(10):
+        t = len(signatures[0])
+        print(signatures[i])
+        print("\n")
