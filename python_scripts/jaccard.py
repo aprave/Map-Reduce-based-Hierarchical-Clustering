@@ -7,17 +7,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cluster import AgglomerativeClustering
 
+# Class to calculate jaccard similarity and to eventually get jaccard dissimilarity matrix
 class Jaccard:
     def __init__(self):
-        self.RANDOM_CONTENT_SIZE = 40
-        self.COMMON_CONTENT_SIZE = 2000
-        self.ROOT_FILE_NAME = ""
-        self.COMMON_CONTENT = ""
-        self.NUMBER_OF_FILES = 80
         self.file_fingerprint_dict={}
-
+    #generate file fingerprint map
     def generate_file_fingerprint_map(self):
-
         for num in range(11,31):
            for k in range(1,5,1):
             print("file"+str(num)+ str(k)+".txt")
@@ -31,6 +26,7 @@ class Jaccard:
             self.file_fingerprint_dict["file"+str(num)+ str(k)+".txt"] = fingerprints
         return self.file_fingerprint_dict
 
+    # jaccard similarity formula
     def jaccard_similarity(self,list1,list2):
         intersection = len(list(set(list1).intersection(list2)))
         union = (len(list1) + len(list2)) - intersection
@@ -38,7 +34,6 @@ class Jaccard:
         return  1 - float(intersection / union)
 
     #get the jaccard similarity for all files
-
     def get_jaccard(self, dict):
         two_d=[]
         for i in range(11,31):
@@ -57,13 +52,8 @@ class Jaccard:
 if __name__ == "__main__":
    dict=Jaccard().generate_file_fingerprint_map()
    signatures=Jaccard().get_jaccard(dict)
-   X=np.array(signatures)
-   cluster = AgglomerativeClustering(n_clusters=4, affinity='euclidean', linkage='ward')
-   cluster.fit_predict(X)
-   print(cluster.labels_)
-   plt.scatter(X[:, 0], X[:, 1], c=cluster.labels_, cmap='rainbow')
-   plt.show()
-   for i in range(10):
+   # prints jaccard dissimilarity
+   for i in range(80):
         t = len(signatures[0])
         print(signatures[i])
         print("\n")

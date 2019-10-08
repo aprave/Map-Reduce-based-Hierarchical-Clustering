@@ -7,30 +7,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cluster import AgglomerativeClustering
 
+# 32 bit number limit and prime number
 maxSysNumber = 2 ** 32 - 1
 nextPrime = 4294967311
+
+# class to calculate Minhash Estimation of Jaccard Similarity
 class Minhash:
     def __init__(self):
-        self.RANDOM_CONTENT_SIZE = 40
-        self.COMMON_CONTENT_SIZE = 2000
-        self.ROOT_FILE_NAME = ""
-        self.COMMON_CONTENT = ""
-        self.NUMBER_OF_FILES = 200
         self.file_fingerprint_dict={}
         self.coeffA = []
         self.coeffB = []
 
-    def getTriangleIndex(self,i, j):
-        if i == j:
-            sys.stderr.write("Can't access triangle matrix with i == j")
-            sys.exit(1)
-        if j < i:
-            temp = i
-            i = j
-            j = temp
-        k = int(i * (200 - (i + 1) / 2.0) + j - i) - 1
-
-        return k
+    # pick random coefficients  a and b for hash function ax+b%c
     def pickRandomCoeffs(self, k):
         randList = []
         while k > 0:
@@ -41,6 +29,7 @@ class Minhash:
             k = k - 1
         return randList
 
+    # generate file fingerprint map
     def generate_file_fingerprint_map(self):
 
         for num in range(11, 31):
@@ -54,6 +43,7 @@ class Minhash:
                 fingerprints.append(count)
             self.file_fingerprint_dict["file"+str(num)+ str(k)+".txt"] = fingerprints
         return self.file_fingerprint_dict
+
 
     def get_min_hashes(self, dict):
         self.coeffA = self.pickRandomCoeffs(50)
@@ -79,6 +69,7 @@ class Minhash:
         elapsed = (time.time() - t0)
         return signatures, new_dict
 
+    # get jaccard similarity
     def get_jaccard(self, dict):
         two_d=[]
         for i in range(11,31):
@@ -92,13 +83,13 @@ class Minhash:
                 two_d.append(new)
         return two_d
 
+    # jaccard similarity formula
     def jaccard_similarity(self,list1,list2):
         intersection = len(list(set(list1).intersection(list(set(list2)))))
         union = (len(list1) + len(list2)) - intersection
         return float(intersection / union)
 
-    #get the jaccard similarity for all files
-
+    #get the minhash estimation of jaccard similarity for all files
     def get_minhash_estimation(self, dict):
         two_d=[]
         for count, i in enumerate(dict, 0):
@@ -111,11 +102,11 @@ class Minhash:
         return two_d
 
 
-
+    # get jaccard and minhash estimation of jaccard and compute standard deviation
 if __name__ == "__main__":
    dict=Minhash().generate_file_fingerprint_map()
    signatures,new_dict = Minhash().get_min_hashes(dict)
    min_estimation = Minhash().get_minhash_estimation(new_dict)
    jaccard = Minhash().get_jaccard(dict)
    diff=np.array(jaccard)-np.array(min_estimation)
-   print(np.std(diff))
+   print("Standard Deviation>>>>>>\n" + str(np.std(diff)))
