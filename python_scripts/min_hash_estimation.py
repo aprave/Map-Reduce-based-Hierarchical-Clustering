@@ -2,6 +2,7 @@ import random
 import sys
 import os
 import time
+import math
 import torch.nn as nn
 import numpy as np
 import matplotlib.pyplot as plt
@@ -108,5 +109,16 @@ if __name__ == "__main__":
    signatures,new_dict = Minhash().get_min_hashes(dict)
    min_estimation = Minhash().get_minhash_estimation(new_dict)
    jaccard = Minhash().get_jaccard(dict)
-   diff=np.array(jaccard)-np.array(min_estimation)
-   print("Standard Deviation>>>>>>\n" + str(np.std(diff)))
+   diff_list=[]
+   sum=0
+   for i in range(80):
+       new_list=[]
+       x=jaccard[i]
+       y=min_estimation[i]
+       for count,k in enumerate(x,0):
+           z=k-y[count]
+           new_list.append(z*z)
+           sum+=z*z
+       diff_list.append(new_list)
+   SD=math.sqrt(sum/80)
+   print("Standard Deviation >>>>>>  " + str(SD))
