@@ -28,7 +28,8 @@ class Jaccard:
     def jaccard_similarity(self,list1,list2):
         intersection = len(list(set(list1).intersection(list2)))
         union = (len(list1) + len(list2)) - intersection
-        return float(intersection / union)
+        # Produce the dissimilarity matrix
+        return  1 - float(intersection / union)
 
     #get the jaccard similarity for all files
 
