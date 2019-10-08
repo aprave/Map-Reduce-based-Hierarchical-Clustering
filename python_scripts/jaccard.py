@@ -46,6 +46,9 @@ class Jaccard:
 
 
 if __name__ == "__main__":
-   dict=Jaccard().generate_file_fingerprint_map()
-   signatures=Jaccard().get_jaccard(dict)
-   print(signatures)
+    dict1 = Jaccard().generate_file_fingerprint_map()
+    signatures = Jaccard().get_jaccard(dict1)
+    for i in range(10):
+        t = len(signatures[0])
+        print(signatures[i])
+        print("\n")
