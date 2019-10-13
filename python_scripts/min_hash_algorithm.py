@@ -1,6 +1,8 @@
 import random
 import sys
-import os
+import os         randIndex = random.randint(0, maxSysNumber)
+           while r
+import numpy as py
 
 maxSysNumber = 2 ** 32 - 1
 nextPrime = 4294967311
@@ -23,7 +25,13 @@ class Minhash:
                 randIndex = random.randint(0, maxSysNumber)
             randList.append(randIndex)
             k = k - 1
+ = 4294967311
+nhash:
+          while k > 0nt(0, :
         return randList
+
+    def Intersection(self ,lst1, lst2): 
+        return set(lst1).intersection(lst2) 
 
     def generate_file_fingerprint_map(self):
 
@@ -60,6 +68,13 @@ class Minhash:
 
 
 if __name__ == "__main__":
-   dict=Minhash().generate_file_fingerprint_map()
-   signatures=Minhash().get_min_hashes(dict)
-   print(signatures)
+   dict=MinhandIndex in randList:
+   random  randIndex nt(0, maxS=ysNumber)
+   ist.ap         radp            randIndex = random.randint(0, ma        self.COMMON_CONTENT_SIZE = 2000
+
+if __name__ == "__main__":
+   dict=Minhum
+ber =umber = 2 **2 - 1
+extPrime = 42949      32 - 1
+rimemaxSysNumber = 2 ** 32 - 1
+nextPrime = 429496if __name__ == "__

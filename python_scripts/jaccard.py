@@ -41,16 +41,16 @@ class Jaccard:
                     new.append(self.jaccard_similarity(fp1,fp2))
                 two_d.append(new)
         return two_d
-    def getSmallestDissimilarity(self, signature) :
-        min = sys.maxsize
-        minIndex = ()
+    # def getSmallestDissimilarity(self, signature) :
+    #     min = sys.maxsize
+    #     minIndex = ()
         
-        for i in range(0, len(signatures)):
-            for j in range(0, len(signatures[0])) :
-                if signature[i][j] > 0 and signature[i][j] < min :
-                    min = signature[i][j]
-                    minIndex = (i, j)
-        return (min, minIndex)
+    #     for i in range(0, len(signatures)):
+    #         for j in range(0, len(signatures[0])) :
+    #             if signature[i][j] > 0 and signature[i][j] < min :
+    #                 min = signature[i][j]
+    #                 minIndex = (i, j)
+    #     return (min, minIndex)
 
                
         
