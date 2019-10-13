@@ -2,12 +2,7 @@ import random
 import sys
 import os
 import math
-import torch.nn as nn
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.cluster import AgglomerativeClustering
-
-# Class to calculate jaccard similarity and to eventually get jaccard dissimilarity matrix
+import numpy as py  
 class Jaccard:
     def __init__(self):
         self.file_fingerprint_dict={}
@@ -46,14 +41,30 @@ class Jaccard:
                     new.append(self.jaccard_similarity(fp1,fp2))
                 two_d.append(new)
         return two_d
+    def getSmallestDissimilarity(self, signature) :
+        min = sys.maxsize
+        minIndex = ()
+        
+        for i in range(0, len(signatures)):
+            for j in range(0, len(signatures[0])) :
+                if signature[i][j] > 0 and signature[i][j] < min :
+                    min = signature[i][j]
+                    minIndex = (i, j)
+        return (min, minIndex)
+
+               
+        
+# if __name__ == "__main__":
+#     dict1 = Jaccard().generate_file_fingerprint_map()
+#     cluster_history = []
+#     signatures = Jaccard().get_jaccard(dict1)
+#     for i in range(10):
+#         t = len(signatures[0])
+#         ClusterSet().initializeClusterSet(signatures[0])
+#         print("\n")
+    #create a map of maps
+    # cluster_history.append(closest(1))
 
 
-
-if __name__ == "__main__":
-   dict=Jaccard().generate_file_fingerprint_map()
-   signatures=Jaccard().get_jaccard(dict)
-   # prints jaccard dissimilarity
-   for i in range(80):
-        t = len(signatures[0])
-        print(signatures[i])
-        print("\n")
+    
+    
