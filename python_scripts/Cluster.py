@@ -1,6 +1,14 @@
 class Cluster:
-    signatures = []
-    def addSignature(self, signatures):
-        self.signatures.append(signatures)
+    jaccards = {}
+    minHashes = []
+    clusterId = ""
+    def __init__(self, clusterId) :
+        self.clusterId = clusterId
+    def addMinhashes(self, minHashes):
+        self.minHashes = minHashes
+    def getMinhash(self):
+        return self.minHashes
+    
+
         
         
