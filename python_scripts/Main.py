@@ -12,7 +12,9 @@ cs.computeMinhashEstimation()  # initalizes the minhashes
 # jaccard = Minhash().get_jaccard(dict)
 
 clusters = cs.getClusters()
-while len(clusters) != 20:
+while len(clusters) > 1:
     minCluster = cs.getClosestClusters()
     cs.clusterMinSets(minCluster[0])
+    clusters = cs.getClusters()
+    print("Clusters Left : " + str(len(clusters)))
     print(minCluster[0][0].clusterId, minCluster[0][1].clusterId)
