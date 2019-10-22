@@ -141,6 +141,9 @@ https://docs.google.com/presentation/d/1Ezn64y_rod80Z9sNUsZNpL3KUEsxELNCFtvAdeZB
 System Demo Video:
 https://www.youtube.com/watch?v=RRxVqCf8IT4&feature=youtu.be
 
+DynamoDb Presentation
+https://docs.google.com/presentation/d/1SsaQcF3r3qiJ5VydNwtSlKEdVpC8x4hzlnz1vtIg76w/edit?ts=5d9fd1a1#slide=id.g6402340200_4_51
+
 ## References :
 https://pdfs.semanticscholar.org/7b12/f6ef8d620bcc54e71da13df4291bcc8d0679.pdf
 ** **
