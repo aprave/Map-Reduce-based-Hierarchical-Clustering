@@ -89,9 +89,13 @@ object MinHash {
       }
       fileSignatureMap +=(fileName -> fileSignatures.toList)
     }
-    println("size of map"+fileSignatureMap.size)
+    var convertToList = new ListBuffer[String]()
+    for ((fileName,fingerPrints) <- fileSignatureMap) {
+      convertToList+=fileName+","+fingerPrints
+    }
+    val signatureMap=sc.parallelize(convertToList)
+    signatureMap.saveAsTextFile("output")
   }
-
 
   def getListOfFiles(dir: File, extensions: List[String]): List[String] = {
     dir.listFiles.filter(_.isFile).toList.filter { file =>
