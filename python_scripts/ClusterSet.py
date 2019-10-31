@@ -7,6 +7,7 @@ from min_hash_estimation import Minhash
 
 class ClusterSet:
     clusters = []
+    nextInt = 0
 
     def addCluster(self, cluster):
         self.clusters.append(cluster)
@@ -15,8 +16,10 @@ class ClusterSet:
         for key in minHashDict.keys():
             # convert string key to integer key
             newKey = re.findall(r'\d+', key)
-            c = Cluster(int(newKey[0]))
+            c = Cluster(self.nextInt)
+            self.nextInt = self.nextInt + 1
             c.addMinhashes(minHashDict[key])
+            c.addName(key)
             self.clusters.append(c)
 
     def getClusters(self):
@@ -36,15 +39,21 @@ class ClusterSet:
         return (closest, minimumDistance)
 
     def clusterMinSets(self, minClusters):
-        newKey = (minClusters[0].clusterId +
-                  minClusters[1].clusterId*31) % 10000
-        mergedCluster = Cluster(
-            newKey)
+        newKey = self.nextInt
+        self.nextInt = self.nextInt + 1
+        mergedCluster = Cluster(newKey)
+        mergedCluster.addName(
+            minClusters[0].clusterName + minClusters[1].clusterName)
         mergedCluster.minHashes = list(set().union(
             minClusters[0].minHashes, minClusters[1].minHashes))
+        print("Merging")
+        print(str(minClusters[0].clusterId) +
+              "with" + str(minClusters[1].clusterId))
+        print("-------->")
+        print(str(mergedCluster.clusterId))
         updatedClusterSet = list(filter(
             lambda x: x.clusterId != minClusters[0].clusterId and x.clusterId != minClusters[1].clusterId, self.clusters))
-        print("updated cluster set" + str(len(updatedClusterSet)))
+
         for c in updatedClusterSet:
             newJaccard = Minhash().jaccard_similarity(
                 mergedCluster.minHashes, c.minHashes)

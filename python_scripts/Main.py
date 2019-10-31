@@ -17,4 +17,4 @@ while len(clusters) > 1:
     cs.clusterMinSets(minCluster[0])
     clusters = cs.getClusters()
     print("Clusters Left : " + str(len(clusters)))
-    print(minCluster[0][0].clusterId, minCluster[0][1].clusterId)
+    # print(minCluster[0][0].clusterId, minCluster[0][1].clusterId)
