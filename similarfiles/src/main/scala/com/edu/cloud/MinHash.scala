@@ -8,6 +8,7 @@ import java.io.File
 import org.apache.spark.SparkConf
 
 import scala.collection.mutable.ListBuffer
+import scala.concurrent.forkjoin.ThreadLocalRandom
 import scala.util.Random
 
 object MinHash {
@@ -26,7 +27,7 @@ object MinHash {
     //load textfile into spark
     val okFileExtensions = List("txt")
     val files = getListOfFiles(new File(args(0)), okFileExtensions)
-
+    val random: ThreadLocalRandom = ThreadLocalRandom.current()
     //files.foreach(println)
     var nextPrime = 4294967311L
     val ACoeff=new ListBuffer[Long]()
@@ -34,7 +35,7 @@ object MinHash {
     for (i <- 1 to 50) {
       val coeffA = sc.parallelize(Seq[Int](), 1)
         .mapPartitions { _ => {
-          (1 to 1).map { _ => Random.nextLong }.iterator
+          (1 to 1).map { _ => random.nextLong(0, nextPrime) }.iterator
         }
         }
       val arr=coeffA.collect()
@@ -43,7 +44,7 @@ object MinHash {
       }
       val coeffB = sc.parallelize(Seq[Int](), 1)
         .mapPartitions { _ => {
-          (1 to 1).map { _ => Random.nextLong }.iterator
+          (1 to 1).map { _ => random.nextLong(0, nextPrime) }.iterator
         }
         }
       val arr1 = coeffB.collect()
