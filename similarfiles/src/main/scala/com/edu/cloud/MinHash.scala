@@ -24,6 +24,7 @@ object MinHash {
     println(args(1))
     val conf = new SparkConf().setAppName("MinHash").setMaster("local[*]")
     //conf.set("spark.hadoop.validateOutputSpecs", "false");
+
     val sc = new SparkContext(conf)
     //load textfile into spark
     val okFileExtensions = List("txt")
@@ -31,7 +32,7 @@ object MinHash {
     val files = sc.parallelize(getListOfFiles(new File(args(0)), okFileExtensions))
     val random: ThreadLocalRandom = ThreadLocalRandom.current()
     //files.foreach(println)
-    var nextPrime = 4294967311L
+    var nextPrime = 42949671L
     val ACoeff=new ListBuffer[Long]()
     val BCoeff=new ListBuffer[Long]()
     for (i <- 1 to 50) {
@@ -66,29 +67,46 @@ object MinHash {
       convertToList+=fileName+","+fingerPrints
     }
     val signatureMap=sc.parallelize(convertToList)
-    signatureMap.saveAsTextFile("output")
+    var count = 1;
+      val clusterSet = new ClusterSet(new ListBuffer[Cluster]())
+      for((k, v) <- fileSignatureMap) {
+        val cluster = new Cluster(count, List[Long](), Map[Int, Double](), v)
+        clusterSet.addCluster(cluster)
+        count = count + 1
+      }
+      get_minhash_estimation(clusterSet)
+     for(c <- clusterSet.getClusters()) {
+       println("cluster id is ")
+       println(c.clusterId)
+       println(c.jaccard)
+     }
+//    signatureMap.saveAsTextFile("output")
   }
   
-    //# jaccard similarity formula
-  def jaccard_similarity(list1: List[Long], list2: List[Long]): Float = {
-      var intersection = ((list1.toSet).intersect(list2.toSet)).size
-      var union = ((list1).size + (list2).size) - intersection
-        return 1 - (intersection.toFloat/ union)
-  }
-  
-  /*def get_minhash_estimation(clusterSet :ClusterSet){
+//    //# jaccard similarity formula
+//  def jaccard_similarity(list1: List[Long], list2: List[Long]): Float = {
+//      var intersection = ((list1.toSet).intersect(list2.toSet)).size
+//      var union = ((list1).size + (list2).size) - intersection
+//        return 1 - (intersection.toFloat/ union)
+//  }
+  def jaccard_similarity(l1 : Set[Long], l2 : Set[Long]): Double = {
+    val unified : Set[Long] = l1.union(l2);
+    val intersection : Set[Long]= l1.intersect(l2);
+    return  intersection.size.toFloat / unified.size
+}
+  def get_minhash_estimation(clusterSet :ClusterSet) : Unit = {
      var count = 0
-     for(c <- clusterSet){
-         for(d <- clusterSet){
+     for(c <- clusterSet.getClusters()){
+         for(d <- clusterSet.getClusters()){
                 if(c.clusterId == d.clusterId){
-                    c.jaccards[d.clusterId] = 0
+                    c.jaccard += (d.clusterId -> 0)
                     count = count + 1
                 }else{
-                    c.jaccards[d.clusterId] = jaccard_similarity(c.getMinhash(), d.getMinhash())
+                    c.jaccard += (d.clusterId ->  jaccard_similarity(c.minHash.toSet, d.minHash.toSet))
                }
          }
       }
-  }*/
+  }
   
 
   
