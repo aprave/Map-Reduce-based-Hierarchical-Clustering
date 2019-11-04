@@ -4,6 +4,7 @@ import org.apache.log4j.LogManager
 import org.apache.log4j.Level
 import org.apache.spark.{SparkConf, SparkContext}
 import java.io.File
+import org.apache.spark.rdd.RDD
 
 import org.apache.spark.SparkConf
 
@@ -23,86 +24,99 @@ object MinHash {
     println(args(1))
     val conf = new SparkConf().setAppName("MinHash").setMaster("local[*]")
     //conf.set("spark.hadoop.validateOutputSpecs", "false");
+
     val sc = new SparkContext(conf)
     //load textfile into spark
     val okFileExtensions = List("txt")
-    val files = getListOfFiles(new File(args(0)), okFileExtensions)
+    //create rdd
+    val files = sc.parallelize(getListOfFiles(new File(args(0)), okFileExtensions))
     val random: ThreadLocalRandom = ThreadLocalRandom.current()
     //files.foreach(println)
-    var nextPrime = 4294967311L
+    var nextPrime = 42949671L
     val ACoeff=new ListBuffer[Long]()
     val BCoeff=new ListBuffer[Long]()
     for (i <- 1 to 50) {
-      val coeffA = sc.parallelize(Seq[Int](), 1)
-        .mapPartitions { _ => {
-          (1 to 1).map { _ => random.nextLong(0, nextPrime) }.iterator
-        }
-        }
-      val arr=coeffA.collect()
-      for(j<-arr){
-        ACoeff+=j
-      }
-      val coeffB = sc.parallelize(Seq[Int](), 1)
-        .mapPartitions { _ => {
-          (1 to 1).map { _ => random.nextLong(0, nextPrime) }.iterator
-        }
-        }
-      val arr1 = coeffB.collect()
-      for(j<- arr1)
-      {
-        BCoeff+=j
-      }
+      ACoeff+=random.nextLong(0, nextPrime)
+      BCoeff+=random.nextLong(0, nextPrime)
     }
-    var fileFingerprintMap = scala.collection.mutable.Map[String, List[Long]]()
-    for(filePath <- files){
-      //println(filePath)
-      val textFile = sc.textFile(filePath)
-      var fingerPrintVal = new ListBuffer[String]()
-      val result = textFile.flatMap(line => line.split(","))
-      result.collect().foreach(fingerPrintVal+=_.trim())
-      val fingerprints= fingerPrintVal.toList
-      val fileName=filePath.slice(filePath.lastIndexOf("\\")+1,filePath.length())
-      var fValues=new ListBuffer[Long]
-      for (i<-fingerprints)
-          fValues+=i.toLong
-      println(fileName)
-      fileFingerprintMap+=(fileName->fValues.toList)
-      for(fingerprint <- fingerprints){
-        //println(fingerprint)
-      }
-      //println("res="+result.collect())
-      //result.saveAsTextFile(args(1))
-    }
-    println("map size"+fileFingerprintMap.size)
+    
+    var resultRDD = sc.emptyRDD[Long]
+    
     val fileSignatureMap = scala.collection.mutable.Map[String, List[Long]]()
-    for ((fileName,fingerPrints) <- fileFingerprintMap) {
-      //println("NIRUPP"+fileName)
-      val min=0
-      var fileSignatures = new ListBuffer[Long]()
-      for (i <- 0 to 49) {
-        var minHashCode = nextPrime + 1
-        for(k<-fingerPrints) {
-          val hashCode = (ACoeff(i) *k + BCoeff(i)) % nextPrime
-          if(hashCode<minHashCode)
-            minHashCode = hashCode
+    //var resultRDD = sc.emptyRDD[Long]
+    var fileList = files.collect()
+    sc.broadcast(ACoeff)
+    sc.broadcast(BCoeff)
+    for (filePath <- fileList) {
+        var fingerPrints = sc.textFile(filePath)
+            .flatMap(line => line.split(","))
+            .map(fp => fp.trim().toLong)
+        var fingerPrintsRdd =fingerPrints.cache()   
+        val min = 0
+        var fileSignatures = new ListBuffer[Long]()
+        for (i <- 0 to 49) {
+            var fingerPrintsRdd =fingerPrints
+            var minHashCode = nextPrime + 1
+            fileSignatures += fingerPrintsRdd.map(k => ((ACoeff(i) * k + BCoeff(i)) % nextPrime)).min()
         }
-        fileSignatures+=minHashCode
-      }
-      fileSignatureMap +=(fileName -> fileSignatures.toList)
+        fileSignatureMap +=((filePath.slice(filePath.lastIndexOf("\\")+1,filePath.length())) -> fileSignatures.toList)
     }
+    println("completed reading")
     var convertToList = new ListBuffer[String]()
     for ((fileName,fingerPrints) <- fileSignatureMap) {
       convertToList+=fileName+","+fingerPrints
     }
     val signatureMap=sc.parallelize(convertToList)
-    signatureMap.saveAsTextFile("output")
+    var count = 1;
+      val clusterSet = new ClusterSet(new ListBuffer[Cluster]())
+      for((k, v) <- fileSignatureMap) {
+        val cluster = new Cluster(count, List[Long](), Map[Int, Double](), v)
+        clusterSet.addCluster(cluster)
+        count = count + 1
+      }
+      get_minhash_estimation(clusterSet)
+     for(c <- clusterSet.getClusters()) {
+       println("cluster id is ")
+       println(c.clusterId)
+       println(c.jaccard)
+     }
+//    signatureMap.saveAsTextFile("output")
   }
+  
+//    //# jaccard similarity formula
+//  def jaccard_similarity(list1: List[Long], list2: List[Long]): Float = {
+//      var intersection = ((list1.toSet).intersect(list2.toSet)).size
+//      var union = ((list1).size + (list2).size) - intersection
+//        return 1 - (intersection.toFloat/ union)
+//  }
+  def jaccard_similarity(l1 : Set[Long], l2 : Set[Long]): Double = {
+    val unified : Set[Long] = l1.union(l2);
+    val intersection : Set[Long]= l1.intersect(l2);
+    return  intersection.size.toFloat / unified.size
+}
+  def get_minhash_estimation(clusterSet :ClusterSet) : Unit = {
+     var count = 0
+     for(c <- clusterSet.getClusters()){
+         for(d <- clusterSet.getClusters()){
+                if(c.clusterId == d.clusterId){
+                    c.jaccard += (d.clusterId -> 0)
+                    count = count + 1
+                }else{
+                    c.jaccard += (d.clusterId ->  jaccard_similarity(c.minHash.toSet, d.minHash.toSet))
+               }
+         }
+      }
+  }
+  
+
+  
+
+  
 
   def getListOfFiles(dir: File, extensions: List[String]): List[String] = {
     dir.listFiles.filter(_.isFile).toList.filter { file =>
       extensions.exists(file.getName.endsWith(_))
     }.map(_.getPath)
   }
+  
 }
-
-
