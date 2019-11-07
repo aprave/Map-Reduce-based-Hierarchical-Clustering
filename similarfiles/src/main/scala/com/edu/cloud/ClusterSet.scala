@@ -35,3 +35,4 @@ class ClusterSet(c:ListBuffer[Cluster]){
         }
      return (closest, minimumDistance)
     }
+}
