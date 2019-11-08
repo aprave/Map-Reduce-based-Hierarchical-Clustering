@@ -11,6 +11,8 @@ class Cluster(id: Int, fingerPrints: List[Long], jaccards: Map[Int, Double], min
   def getFingerPrint(): List[Long] = {
     return fingerPrint;
   }
+
+
   def setJaccard(j : Map[Int, Double]) = {
       jaccard = j;
   }

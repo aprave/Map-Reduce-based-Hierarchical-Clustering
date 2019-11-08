@@ -80,6 +80,15 @@ object MinHash {
        println(c.clusterId)
        println(c.jaccard)
      }
+      var minCluster:(ListBuffer[Cluster], Double) =  clusterSet.getClosestClusters()
+       println(minCluster._1)
+       println(minCluster._2)
+       println(clusterSet.getClosestClusters())
+       println(clusterSet.getClosestClusters()._1(0))
+       println(clusterSet.getClosestClusters()._1(1))
+       println(clusterSet.getClosestClusters()._1(0).clusterId)
+       println(clusterSet.getClosestClusters()._1(0).jaccard)
+       println(clusterSet.getClosestClusters()._1(0).fingerPrint)
 //    signatureMap.saveAsTextFile("output")
   }
   
