@@ -67,12 +67,16 @@ object MinHash {
       convertToList+=fileName+","+fingerPrints
     }
     val signatureMap=sc.parallelize(convertToList)
-    var count = 1;
       val clusterSet = new ClusterSet(new ListBuffer[Cluster]())
+
       for((k, v) <- fileSignatureMap) {
-        val cluster = new Cluster(count, List[Long](), Map[Int, Double](), v)
+        println("key is ")
+
+        var key = clusterSet.getLastKey()
+        println(key)
+        val cluster = new Cluster(key, List[Long](), Map[Int, Double](), v)
         clusterSet.addCluster(cluster)
-        count = count + 1
+        clusterSet.setLastKey(key + 1)
       }
       get_minhash_estimation(clusterSet)
      for(c <- clusterSet.getClusters()) {
@@ -80,15 +84,19 @@ object MinHash {
        println(c.clusterId)
        println(c.jaccard)
      }
-      var minCluster:(ListBuffer[Cluster], Double) =  clusterSet.getClosestClusters()
-       println(minCluster._1)
-       println(minCluster._2)
-       println(clusterSet.getClosestClusters())
-       println(clusterSet.getClosestClusters()._1(0))
-       println(clusterSet.getClosestClusters()._1(1))
+    val minCluster: (ListBuffer[Cluster], Double) = clusterSet.getClosestClusters()
+       //println(minCluster._1)
+       //println(minCluster._2)
+       //println(clusterSet.getClosestClusters())
        println(clusterSet.getClosestClusters()._1(0).clusterId)
-       println(clusterSet.getClosestClusters()._1(0).jaccard)
-       println(clusterSet.getClosestClusters()._1(0).fingerPrint)
+        println(clusterSet.getClosestClusters()._1(1).clusterId)
+       //println(clusterSet.getClosestClusters()._1(1))
+       println("Jaccard of 0", clusterSet.getClosestClusters()._1(0).jaccard)
+       println("Jaccard of 1", clusterSet.getClosestClusters()._1(1).jaccard)
+       //println("Fingerprint",clusterSet.getClosestClusters()._1(0).fingerPrint)
+
+      var h = new Hierarchical(clusterSet)
+      h.performHierarchical()
 //    signatureMap.saveAsTextFile("output")
   }
   
@@ -118,9 +126,7 @@ object MinHash {
   }
   
 
-  
 
-  
 
   def getListOfFiles(dir: File, extensions: List[String]): List[String] = {
     dir.listFiles.filter(_.isFile).toList.filter { file =>
