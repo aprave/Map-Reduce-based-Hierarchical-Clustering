@@ -130,24 +130,27 @@ Iterative clustering algorithm that supports following linkage algorithms:
 * How do we design the dissimilarity matrix and are there any ways to alter the representation so as to reduce the spatial complexity?
 
 ## Presentations:
-Demo 1:
+* Demo 1:
 https://docs.google.com/presentation/d/1QKXyxbTsCa_3MybXeT2vbhxHfIkL4UOI8EqA_8rBoV8/edit?usp=sharing
-System Demo Video:
+Demo 1 Video:
 https://youtu.be/xMPnpYLJiG0
 
-Demo 2 :
+* Demo 2 :
 https://docs.google.com/presentation/d/1Ezn64y_rod80Z9sNUsZNpL3KUEsxELNCFtvAdeZBqhA/edit?usp=sharing
+Demo 2 Video:
+https://www.youtube.com/watch?v=RRxVqCf8IT4&feature=youtu.be
 
-Demo 3 :
+* Demo 3 :
 https://docs.google.com/presentation/d/1GHy-XMVLtc0iKHnHkkAv0IWuj4MZS7w9VitBBCiH9Yc/
-
 Demo 3 Video : 
 https://youtu.be/ksQER1UrrzQ
 
-System Demo Video:
-https://www.youtube.com/watch?v=RRxVqCf8IT4&feature=youtu.be
+* Demo 4:
+https://docs.google.com/presentation/d/1YZRqfU9g47Esq7O9m7mFGzf1OXJydVNFjp_d3Aa4fnY/edit?usp=sharing
+Demo 4 Video:
+https://www.youtube.com/watch?v=faLUXh1TB40&feature=youtu.be
 
-DynamoDb Presentation
+* DynamoDb Presentation
 https://docs.google.com/presentation/d/1SsaQcF3r3qiJ5VydNwtSlKEdVpC8x4hzlnz1vtIg76w/edit?ts=5d9fd1a1#slide=id.g6402340200_4_51
 
 ## References :
