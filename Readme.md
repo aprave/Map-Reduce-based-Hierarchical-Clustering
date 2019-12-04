@@ -4,9 +4,8 @@
 
 ## 1.   Vision and Goals Of The Project:
 
-The current demands for datacenters are huge and storing backups can become a tedious task. Moving massive data in the production environment is both computationally and spatially expensive. To resolve this, Dell's DDFS (Data Domain File System) provides deduplication that splits files into chunks. Using Hierarchical clustering would allow us to iteratively predict similarity in files with more confidence. Scaling our solution using map-reduce also enables us to perform deduplication on a multi-node distributed system.
-
-Our short term goal in this project is to develop a clustering algorithm that can potentially find similar files on a single node. Our efforts would be focused on finding techniques that can predict similarity in files using minhash estimation of the Jaccard distance.
+The current demands for datacenters are huge and storing backups can become a tedious task. Moving massive data in the production environment is both computationally and spatially expensive. In Dell’s  DDFS architecture, there is a need to find similar tags (files) in the entire system. The memory requirement for a dissimilarity matrix is N^2, which presents a great challenge when considering files in the order of millions. Implement an algorithm for this problem such that it can be scaled to multiple nodes.
+Our short term goal in this project is to develop a clustering algorithm that can potentially find similar files on a single node. Our efforts would be focused on finding techniques that can predict similarity in files using minhash estimation of the Jaccard distance as it reduces space requirent.
 
 The goals of the project:
 * Report performance related findings on various file similarity calculation algorithms-minhash and jaccard.
@@ -49,6 +48,9 @@ If we know |A| and |B| and J(A, B), we can estimate
 
 <img src="/images/minhash_calculation.PNG" width="750" height="300">
 
+Minhash reduces the space requirement from N X N to N X number of hash functions, where N is the number of files in the system. 
+We can apply hash functions of the form (ax+b)% c where x is fingerprint, a and b are constants less than x and c is a prime number greater than x.
+
 <img src="/images/matrix.PNG" width="300" height="300">
 
  * Hierarchical clustering - It is one of the popular and easy to understand clustering technique.
@@ -59,8 +61,13 @@ The basic algorithm of Agglomerative is straight forward.
 * Compute the proximity matrix.
 * Let each data point be a cluster.
 * Repeat: Merge the two closest clusters and update the proximity matrix until only a single cluster remains.
+  
   <img src="/images/hierarchical_clustering.PNG" width="750" height="350">
-
+  
+## Learnings
+* Finding similarity using minhash algorithm.
+* Spark/Scala for iterative hierarchical clustering algorithm.
+* AWS S3 for data storage and AWS EMR.
 ## 5. Acceptance criteria
 
 *The minimum acceptance criteria for the project is as follows :*
@@ -83,37 +90,34 @@ We need to create files with similar data. There are a few “canonical” build
 * Chain of files with p% common data between adjacent files:
 F1, F2, F3, … such that Fi and Fj share p% of common data
 * A binary hierarchy relationship like this:
+
 <img src="/images/Hierarchy.PNG" width="300" height="300">
 
-Minhash Signature : Generate min hashes for the files created above.
+Generate datsset with different similarity levels.
+Understand jaccard and minhash.
 
 Release # 2 (due by week 4)
 
-* Minhash estimation of the Jaccard distance
+* Implement minhash to optimize space complexity from N X N to N X number of hash functions. 
 
 Release # 3 : (due by week 6)
 
-* A basic clustering algorithm that supports minhashing.
+* Implement hierarchical clustering algorithm using Python for single node.
 
 Release # 4 : (due by week 8)
 
-* Implement iterate map reduce clustering algorithm
+* Implement iterative hierarchical clustering algorithm.
+* Research on mapReduce Hadoop and Spark to determine better algorithm for scaling current algorithm to multiple nodes.
 
 Release # 5 : (due by week 10)
 
-* Report the efficiency improvement experiments of the clustering algorithm by improving the space efficiency.
+* Scale hierarchical clustering algorithm to multiple nodes using Spark/Scala.
 
 Release # 6 : (due by week 12)
-
-_Stretch Goals:_
-Iterative clustering algorithm that supports following linkage algorithms:
-* Max/Complete linkage
-* Average linkage
+* Deploy algorithm on AWS and perform experiments with different machine configurations and number of files.
 
 ## Open Questions?
 * Apart from researchers at Dell Data Domain File System team, who else will be the users and personas for this project?
-
-* How do we design the dissimilarity matrix and are there any ways to alter the representation so as to reduce the spatial complexity?
 
 ## Presentations:
 * Demo 1:
