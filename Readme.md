@@ -30,7 +30,6 @@ The main features we are aiming to implement were elucidated by our mentor:
 ## 4. Solution Concept
 _Overview_
 
-<img src="/images/mapreduce.PNG" width="750" height="1000">
 
 _Fig 1- The workflow diagram of the project. The first step is to generate dataset files with fingerprints. The second step is to get initial dissimilarity matrix. This matrix is input to first iteration of map reduce and the output of first map reduce iteration is input to the second iteration and so on until the optimal solution is reached._
 
@@ -48,6 +47,10 @@ Given the minhash signature of A and B, {a1,a2,a3,… an} and {b1, b2, b3, … b
 {min(a1,b1), min(a2,b2), … min(an, bn)}
 If we know |A| and |B| and J(A, B), we can estimate
            |A U B| and |A ∩ B|
+           
+
+<img src="/images/minhash_calculation.PNG" width="750" height="300">
+
  * Hierarchical clustering - It is one of the popular and easy to understand clustering technique.
 For this project, initially each data point is considered as an individual cluster. At each iteration, similar clusters will merge with other clusters until one cluster or K clusters are formed.The basic algorithm is :  
           
