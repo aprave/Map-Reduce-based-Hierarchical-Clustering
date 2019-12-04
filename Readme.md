@@ -51,6 +51,8 @@ If we know |A| and |B| and J(A, B), we can estimate
 
 <img src="/images/minhash_calculation.PNG" width="750" height="300">
 
+<img src="/images/matrix.PNG" width="300" height="300">
+
  * Hierarchical clustering - It is one of the popular and easy to understand clustering technique.
 For this project, initially each data point is considered as an individual cluster. At each iteration, similar clusters will merge with other clusters until one cluster or K clusters are formed.The basic algorithm is :  
           
@@ -58,7 +60,8 @@ For this project, initially each data point is considered as an individual clust
    * Let each data point be a cluster  
    * Repeat: Merge the two closest clusters and update the proximity matrix until there is no change in the matrix.  
    * Since hierarchical clustering needs to create a distance matrix in order to compute similarities it proves to be highly space  inefficient especially when number of files are large. However, if the algorithm is scaled and distributed across multiple nodes, it can highly improve performance. In order to accomplish this, the project will use map reduce to process the distance matrix over multiple nodes.
-           
+  <img src="/images/hierarchical_clustering.PNG" width="750" height="350">      
+  
  * Finding Similarities among files - Apart from calculating Jaccard index, the following measures can be used to find distance between two hash functions :  
  **single linkage algorithm** : can be defined as the similarity of two clusters C1 and C2 is equal to the minimum of the similarity between points Pi and Pj such that Pi belongs to C1 and Pj belongs to C2.  
 Sim(C1,C2) = Min Sim(Pi,Pj) such that Pi ∈ C1 & Pj ∈ C2  
