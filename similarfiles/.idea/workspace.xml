@@ -2,37 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86b79a01-971a-4a92-b558-94f5e033e839" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/edu/cloud/Cluster.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/edu/cloud/Cluster.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/edu/cloud/ClusterSet.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/edu/cloud/ClusterSet.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/edu/cloud/MinHash.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/edu/cloud/MinHash.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/ClusterSet$$anonfun$getClosestClusters$1$$anonfun$apply$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/ClusterSet$$anonfun$getClosestClusters$1$$anonfun$apply$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/ClusterSet$$anonfun$getClosestClusters$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/ClusterSet$$anonfun$getClosestClusters$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/ClusterSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/ClusterSet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$2$$anonfun$apply$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$2$$anonfun$apply$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$2$$anonfun$apply$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1$$anonfun$1$$anonfun$apply$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1$$anonfun$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1$$anonfun$2$$anonfun$apply$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1$$anonfun$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1$$anonfun$apply$mcVI$sp$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1$$anonfun$apply$mcVI$sp$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$2$$anonfun$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$2$$anonfun$apply$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$2$$anonfun$apply$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$2$$anonfun$apply$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$4$$anonfun$apply$7$$anonfun$apply$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$4$$anonfun$apply$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$get_minhash_estimation$1$$anonfun$apply$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$get_minhash_estimation$1$$anonfun$apply$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$get_minhash_estimation$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$get_minhash_estimation$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash.class" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +26,28 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/edu/cloud/MinHash.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/com/edu/cloud/hierarchical.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -64,12 +71,70 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="30" />
+    <option name="y" value="60" />
+    <option name="width" value="3780" />
+    <option name="height" value="1920" />
+  </component>
   <component name="ProjectId" id="1TCgcSQ0PSn3WjUTxBxIZsf5Wee" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="similarfiles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="similarfiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="similarfiles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="similarfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="similarfiles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="similarfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="similarfiles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="similarfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="similarfiles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="similarfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="similarfiles" type="b2602c69:ProjectViewProjectNode" />
+              <item name="similarfiles" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="scala" type="462c0819:PsiDirectoryNode" />
+              <item name="cloud" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572564823213" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1573776653096" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DesignAndShareSpringBoot/similarfiles" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -137,12 +202,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scala Console" type="ScalaScriptConsoleRunConfiguration" factoryName="Scala Console" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+    <configuration name="Scala Console" type="ScalaScriptConsoleRunConfiguration" factoryName="Scala Console" temporary="true">
       <module name="similarfiles" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="javaOptions" value="-Djline.terminal=NONE" />
-      <option name="myConsoleArgs" value="" />
-      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="vmparams4" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="consoleArgs" value="-usejavacp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -180,6 +244,7 @@
       <workItem from="1572476649415" duration="18624000" />
       <workItem from="1572969584720" duration="1947000" />
       <workItem from="1573077243797" duration="32572000" />
+      <workItem from="1573776371137" duration="316000" />
     </task>
     <servers />
   </component>
@@ -191,6 +256,9 @@
       <configuration name="All in similarfiles" configurationId="JUnit" />
     </history-entry>
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="316000" />
+  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -199,6 +267,42 @@
       <are-packages-shown value="true" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-6" y="-6" width="1292" height="692" extended-state="6" />
+    <layout>
+      <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="Capture Tool" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32978722" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -209,11 +313,47 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/edu/cloud/hierarchical.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/com/edu/cloud/MinHash.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
