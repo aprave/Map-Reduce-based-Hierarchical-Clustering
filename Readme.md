@@ -215,7 +215,7 @@ https://www.youtube.com/watch?v=faLUXh1TB40&feature=youtu.be
 * Demo 5:
 https://docs.google.com/presentation/d/1e61itiK3FSfFck-eEj0vPj13foz7sxIwOhH3HKn7VQw/edit?usp=sharing
            
-   * Demo 5 Video:
+   * Demo 5 Video: https://www.youtube.com/watch?v=xBuSyyC_R78&feature=youtu.be
 
 
 
@@ -225,8 +225,10 @@ https://docs.google.com/presentation/d/1SsaQcF3r3qiJ5VydNwtSlKEdVpC8x4hzlnz1vtIg
 
 
 
-* Final Presentation:
-https://youtu.be/NBuytAo5oAk
+## Final Presentation:
+* Slide Deck: https://docs.google.com/presentation/d/1LtmVCgmOsfGE1cPD0n_huUxTiq_6_10VPidJ_d0yZy4/edit?usp=sharing
+
+* Video: https://youtu.be/NBuytAo5oAk
 
 ## References :
 https://pdfs.semanticscholar.org/7b12/f6ef8d620bcc54e71da13df4291bcc8d0679.pdf
