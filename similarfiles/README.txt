@@ -1,10 +1,3 @@
-Hadoop MapReduce WordCount Demo
-Example code for CS6240
-Fall 2018
-
-Code author
------------
-Joe Sackett
 
 Installation
 ------------
@@ -14,7 +7,7 @@ These components are installed:
 - Hadoop 2.9.1
 - Spark 2.3.1 (without bundled Hadoop)
 - Maven
-- AWS CLI (for EMR execution)
+- AWS CLI (for EMR execution) (how to install AWS CLI - https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html)
 
 Environment
 -----------
@@ -39,7 +32,7 @@ All of the build & execution commands are organized in the Makefile.
 4) Edit the Makefile to customize the environment at the top.
 	Sufficient for standalone: hadoop.root, jar.name, local.input
 	Other defaults acceptable for running standalone.
-5) Standalone Hadoop:
+5) Standalone Hadoop: (To run on local machine)
 	make switch-standalone		-- set standalone Hadoop environment (execute once)
 	make local
 6) Pseudo-Distributed Hadoop: (https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/SingleCluster.html#Pseudo-Distributed_Operation)

@@ -1,4 +1,4 @@
-# Makefile for Spark FollowerCount project.
+# Makefile for Clustering project.
 
 # Customize these paths for your environment.
 # -----------------------------------------------------------
@@ -9,6 +9,7 @@ jar.name=similarfiles.jar
 maven.jar.name=similarfiles-1.0.jar
 job.name=com.edu.cloud.MinHash
 local.master=local[4]
+# local.input=/Users/sanketsaurav/git/cs6220/Using_map-reduce_based_hierarchical_clustering_to_find_similar_files_in_a_large_datas/python_scripts/dataset
 local.input=input
 local.output=output
 # Pseudo-Cluster Execution
@@ -16,15 +17,15 @@ hdfs.user.name=joe
 hdfs.input=input
 hdfs.output=output
 # AWS EMR Execution
-aws.jobtitle=SimFile-3m-large-run-5
+aws.jobtitle=SimFile-500-2m-2x-large-run-2	
 aws.subnet.id=subnet-d86ee8bf
 aws.emr.release=emr-5.17.0
 aws.bucket.name=cs6240-mr-bucket
-aws.input=similar-file-input
+aws.input=similar-file-large-input
 aws.output=output/${aws.jobtitle}
 aws.log.dir=log/${aws.jobtitle}
-aws.num.nodes=3
-aws.instance.type=m4.large
+aws.num.nodes=2		
+aws.instance.type=m4.2xlarge
 # -----------------------------------------------------------
 
 # Compiles code and builds jar (with dependencies).
@@ -112,7 +113,7 @@ upload-app-aws:
 # Main EMR launch.
 aws: jar upload-app-aws delete-output-aws
 	aws emr create-cluster \
-		--name "SimFile Spark Cluster" \
+		--name "SimFile Spark Cluster Large Demo" \
 		--release-label ${aws.emr.release} \
 		--instance-groups '[{"InstanceCount":${aws.num.nodes},"InstanceGroupType":"CORE","InstanceType":"${aws.instance.type}"},{"InstanceCount":1,"InstanceGroupType":"MASTER","InstanceType":"${aws.instance.type}"}]' \
 	    --applications Name=Hadoop Name=Spark \
