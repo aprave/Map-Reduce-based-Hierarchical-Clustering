@@ -116,6 +116,20 @@ Release # 5 : (due by week 10)
 Release # 6 : (due by week 12)
 * Deploy algorithm on AWS and perform experiments with different machine configurations and number of files.
 
+## Project Installation
+Required Softwares and Assemblies
+Maven, Scala Installer, Git, Spark, Python, aws-cli
+Instructions
+* Install maven from here : https://maven.apache.org/download.cgi
+* Install Scala from here : https://www.scala-lang.org/download/
+* Install Git from here : https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+* Install spark from here : https://spark.apache.org/downloads.html
+* Install python from here : https://www.python.org/downloads/
+* Install aws-cli from here : https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
+* once all the required softwares are installed, clone the repository.
+* run mvn clean install
+
+
 ## Open Questions?
 * Apart from researchers at Dell Data Domain File System team, who else will be the users and personas for this project?
 
