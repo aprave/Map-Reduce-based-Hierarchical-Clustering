@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="86b79a01-971a-4a92-b558-94f5e033e839" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/edu/cloud/Cluster.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/edu/cloud/Cluster.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/edu/cloud/ClusterSet.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/edu/cloud/ClusterSet.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/com/edu/cloud/MinHash.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/edu/cloud/MinHash.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$2$$anonfun$apply$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$getListOfFiles$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1$$anonfun$1$$anonfun$apply$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1$$anonfun$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1$$anonfun$2$$anonfun$apply$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1$$anonfun$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1$$anonfun$apply$mcVI$sp$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1$$anonfun$apply$mcVI$sp$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$2$$anonfun$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$2$$anonfun$apply$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$2$$anonfun$apply$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$2$$anonfun$apply$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$4$$anonfun$apply$7$$anonfun$apply$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$4$$anonfun$apply$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$$anonfun$main$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/edu/cloud/MinHash.class" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Scala Script" />
+        <option value="Scala Object" />
+        <option value="Package Object" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1TCgcSQ0PSn3WjUTxBxIZsf5Wee" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572564823213" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.MinHash (1)">
+    <configuration name="MinHash (1)" type="Application" factoryName="Application">
+      <envs>
+        <env name="input" value="" />
+      </envs>
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.edu.cloud.MinHash" />
+      <module name="similarfiles" />
+      <option name="PROGRAM_PARAMETERS" value="input output" />
+      <option name="VM_PARAMETERS" value="-Xms512m" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.edu.cloud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MinHash" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="MinHash" />
+      <module name="similarfiles" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="minHash" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.edu.cloud.minHash" />
+      <module name="similarfiles" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in similarfiles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="similarfiles" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scala Console" type="ScalaScriptConsoleRunConfiguration" factoryName="Scala Console" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
+      <module name="similarfiles" />
+      <option name="allowRunningInParallel" value="false" />
+      <option name="javaOptions" value="-Djline.terminal=NONE" />
+      <option name="myConsoleArgs" value="" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MinHash (1)" />
+      <item itemvalue="Application.MinHash" />
+      <item itemvalue="Application.minHash" />
+      <item itemvalue="JUnit.All in similarfiles" />
+      <item itemvalue="Scala Console.Scala Console" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Scala Console.Scala Console" />
+        <item itemvalue="JUnit.All in similarfiles" />
+        <item itemvalue="Application.minHash" />
+        <item itemvalue="Application.MinHash" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="86b79a01-971a-4a92-b558-94f5e033e839" name="Default Changelist" comment="" />
+      <created>1572463067585</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1572463067585</updated>
+      <workItem from="1572463072899" duration="1870000" />
+      <workItem from="1572465580372" duration="4937000" />
+      <workItem from="1572470668631" duration="4883000" />
+      <workItem from="1572475712124" duration="365000" />
+      <workItem from="1572476649415" duration="18624000" />
+      <workItem from="1572969584720" duration="1947000" />
+      <workItem from="1573077243797" duration="32572000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="All_in_similarfiles - 2019.10.30 at 17h 46m 26s.xml">
+      <configuration name="All in similarfiles" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_similarfiles - 2019.10.30 at 17h 48m 03s.xml">
+      <configuration name="All in similarfiles" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
