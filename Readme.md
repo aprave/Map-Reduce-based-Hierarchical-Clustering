@@ -46,7 +46,7 @@ If we know |A| and |B| and J(A, B), we can estimate
            |A U B| and |A ∩ B|
            
 
-<img src="/images/minhash_calculation.PNG" width="750" height="300">
+<img src="/images/minhash_workflow.PNG" width="750" height="300">
 
 Minhash reduces the space requirement from N X N to N X number of hash functions, where N is the number of files in the system. 
 We can apply hash functions of the form (ax+b)% c where x is fingerprint, a and b are constants less than x and c is a prime number greater than x.
