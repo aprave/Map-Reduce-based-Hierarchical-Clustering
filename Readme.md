@@ -139,49 +139,49 @@ run similarfiles/MinHash.scala with arguments input output
 
 
 ### Installation - (To use via makefile)
-------------
-These components are installed (Use specific version as there can be compatibility issue with different versions):
-- JDK 1.8
-- Scala 2.11.12
-- Hadoop 2.9.1
-- Spark 2.3.1 (without bundled Hadoop)
-- Maven
-- AWS CLI (for EMR execution)
+	------------
+	These components are installed (Use specific version as there can be compatibility issue with different versions):
+	- JDK 1.8
+	- Scala 2.11.12
+	- Hadoop 2.9.1
+	- Spark 2.3.1 (without bundled Hadoop)
+	- Maven
+	- AWS CLI (for EMR execution)
 
-Environment
------------
-1) Example ~/.bash_aliases:
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-export HADOOP_HOME=/home/joe/tools/hadoop/hadoop-2.9.1
-export SCALA_HOME=/home/joe/tools/scala/scala-2.11.12
-export SPARK_HOME=/home/joe/tools/spark/spark-2.3.1-bin-without-hadoop
-export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
-export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$SCALA_HOME/bin:$SPARK_HOME/bin
-export SPARK_DIST_CLASSPATH=$(hadoop classpath)
+	#### Environment
+	-----------
+	1) Example ~/.bash_aliases:
+	export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+	export HADOOP_HOME=/home/joe/tools/hadoop/hadoop-2.9.1
+	export SCALA_HOME=/home/joe/tools/scala/scala-2.11.12
+	export SPARK_HOME=/home/joe/tools/spark/spark-2.3.1-bin-without-hadoop
+	export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
+	export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$SCALA_HOME/bin:$SPARK_HOME/bin
+	export SPARK_DIST_CLASSPATH=$(hadoop classpath)
 
-2) Explicitly set JAVA_HOME in $HADOOP_HOME/etc/hadoop/hadoop-env.sh:
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+	2) Explicitly set JAVA_HOME in $HADOOP_HOME/etc/hadoop/hadoop-env.sh:
+	export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 
-Execution
----------
-All of the build & execution commands are organized in the Makefile.
+	#### Execution
+	---------
+	All of the build & execution commands are organized in the Makefile.
 
-1) Open command prompt.
+	1) Open command prompt.
 
-2) Navigate to required directory.
+	2) Navigate to required directory.
 
-3) clone the project from git using command "git clone https://github.com/BU-NU-CLOUD-F19/Using_map-reduce_based_hierarchical_clustering_to_find_similar_files_in_a_large_datas.git"
+	3) clone the project from git using command "git clone https://github.com/BU-NU-CLOUD-F19/Using_map-reduce_based_hierarchical_clustering_to_find_similar_files_in_a_large_datas.git"
 
-4) Edit the Makefile to customize the environment at the top.
-	Sufficient for standalone: hadoop.root, jar.name, local.input
-	Other defaults acceptable for running standalone.
-5) Standalone Hadoop: (To run on local machine)
-	make switch-standalone		-- set standalone Hadoop environment (execute once)
-	make local
-6) AWS EMR Hadoop: (you must configure the emr.* config parameters at top of Makefile)
-	make upload-input-aws		-- only before first execution
-	make aws					-- check for successful execution with web interface (aws.amazon.com)
-	download-output-aws			-- after successful execution & termination
+	4) Edit the Makefile to customize the environment at the top.
+		Sufficient for standalone: hadoop.root, jar.name, local.input
+		Other defaults acceptable for running standalone.
+	5) Standalone Hadoop: (To run on local machine)
+		make switch-standalone		-- set standalone Hadoop environment (execute once)
+		make local
+	6) AWS EMR Hadoop: (you must configure the emr.* config parameters at top of Makefile)
+		make upload-input-aws		-- only before first execution
+		make aws					-- check for successful execution with web interface (aws.amazon.com)
+		download-output-aws			-- after successful execution & termination
 
 
 ## Open Questions?
