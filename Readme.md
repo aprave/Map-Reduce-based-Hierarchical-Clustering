@@ -46,7 +46,7 @@ If we know |A| and |B| and J(A, B), we can estimate
            |A U B| and |A ∩ B|
            
 
-<img src="/images/minhash_calculation.PNG" width="750" height="300">
+<img src="/images/minhash.PNG" width="750" height="300">
 
 Minhash reduces the space requirement from N X N to N X number of hash functions, where N is the number of files in the system. 
 We can apply hash functions of the form (ax+b)% c where x is fingerprint, a and b are constants less than x and c is a prime number greater than x.
@@ -168,6 +168,11 @@ https://docs.google.com/presentation/d/1e61itiK3FSfFck-eEj0vPj13foz7sxIwOhH3HKn7
 
 * DynamoDb Presentation
 https://docs.google.com/presentation/d/1SsaQcF3r3qiJ5VydNwtSlKEdVpC8x4hzlnz1vtIg76w/edit?ts=5d9fd1a1#slide=id.g6402340200_4_51
+
+
+
+* Final Presentation:
+https://youtu.be/NBuytAo5oAk
 
 ## References :
 https://pdfs.semanticscholar.org/7b12/f6ef8d620bcc54e71da13df4291bcc8d0679.pdf
